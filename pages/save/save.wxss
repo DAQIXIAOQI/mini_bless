@@ -1,0 +1,90 @@
+.box {
+  margin-bottom: 20rpx;
+}
+
+.bless-box {
+  width: 100vw;
+  height: 55vw;
+  position: relative;
+  padding:  20rpx 0 ;
+  background-color: white;
+}
+.bless-box .main {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%; 
+}
+.bless-box .main .bless{
+    height:50%;
+    overflow: hidden;
+    position: absolute;
+    width: 70%;
+    left: 15%;
+    top: 25%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.bless-box .rece-box {
+   position: absolute;
+   right:0;
+   bottom: 0; 
+}
+
+.items {
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0; 
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx 0 20rpx;
+}
+.items:last-child {
+  border-bottom-width:  0rpx;
+}
+.items .right {float:right;height: 98rpx;line-height: 98rpx;}
+.items .right text {
+  margin-left:25rpx;
+}
+.items .left {
+  display: inline-block;
+  width: 70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+    margin: 15rpx 0; 
+    float: left;
+    color:#9d9d9d;
+}
+.items .main {
+  display: inline-block;
+  height: 100%;
+  color: #4b4b4b;
+}
+.btn-box {
+  padding: 0 30rpx 30rpx 30rpx;
+}
+.btn-box .btn{
+   background-color: #f67f7f;
+   color: white;
+   display: inline-block;
+   width: 150rpx;
+   height: 60rpx;
+   line-height: 60rpx;
+   text-align: center;
+   border-radius: 99rpx;
+   margin-right: 50rpx;
+   font-size: 30rpx;
+}
+.btn-box .send-box {
+  margin-top: 20rpx;
+  text-align: right;
+}
+.btn-box .send-box .btn {
+  margin-right: 0;
+}
+
+
+
+

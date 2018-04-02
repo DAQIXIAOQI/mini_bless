@@ -1,0 +1,43 @@
+.container {
+  float: left;
+}
+.img-box {
+  border-radius: 999rpx;
+  overflow: hidden;
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+ 
+}
+.text {
+  text-align: center;
+  font-size: 35rpx;
+}
+.container.editpage  {
+  margin-right:50rpx;
+}
+.container.editpage .img-box {
+  width: 80rpx;
+  height: 80rpx;
+} 
+.container.editpage .img-box {
+  margin: 0 auto;
+}
+.container.editpage .text {
+  font-size: 30rpx;
+  height: 30rpx;
+  line-height: 32rpx;
+  display: inline-block;
+}
+
+.container.bless .text {
+ color:#f59165;
+ font-size: 30rpx;
+}
+.container.sender {
+ margin-top: -18rpx;
+ margin-left: 8rpx;
+}
+.container.geter {
+  margin:0 30rpx 50rpx 0; 
+}

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "imgBox": "/components/cc_imgBox/cc_imgBox",
+    "tNotice": "/components/cc_tbNotice/cc_tbNotice",
+    "inputBox":"/components/cc_inputBox/cc_inputBox",
+    "inlineAbstract": "/components/cc_inlineAbstract/cc_inlineAbstract",
+    "btnToAjax": "/components/cc_btnToAjax/cc_btnToAjax",
+    "fulllist": "/components/cc_fullTabsList/cc_fullTabsList",
+    "redPacket": "/components/cc_redPacket/cc_redPacket"
+  }
+}

@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  background: lightblue;
+  background-size:100% 100%; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.btn {
+  position: absolute; 
+  top: 10%;
+  width: 200rpx;
+  overflow: hidden;
+}
+.left-btn {
+     left: 0;
+}
+.right-btn {
+  right:0;
+}
+
+.main {
+  
+  
+  margin: 0 auto;
+  overflow: hidden;
+}

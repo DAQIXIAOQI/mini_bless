@@ -1,0 +1,5 @@
+<view  class='content {{position}} ' style='background:{{bgcolor}}'>
+    
+    <!-- <text class='iconfont {{iconPath}}'></text> -->
+    <view class='main' style="color:{{color}}">{{text}}</view>
+</view>

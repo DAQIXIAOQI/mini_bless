@@ -1,0 +1,12 @@
+.contentBox {
+  width: 94vw;
+  margin: 9vh auto 0 auto;
+
+}
+
+.contentBox .item {
+  width: 100%;
+  height: 28vh;
+  margin-bottom: 2vh; 
+}
+

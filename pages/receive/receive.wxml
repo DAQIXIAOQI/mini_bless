@@ -1,0 +1,9 @@
+<view class='container gray-content'>
+  <view class="for-box">
+ <view class="cart-box {{column}}" wx:for='{{listData}}' wx:key="receivelist"> 
+ <cartA cid="{{options.url=='cart' ? 'cart cartb':'cart'}}" title="{{options.url=='cart' ? '标题名称':''}}" width="{{column == 'column3' ?'30.3vw':'44vw'}}" imgh="1" imgsrc="{{item.imgsrc}}" lefttext="{{item.name}}" righttext="{{item.time}}"></cartA>
+ </view>
+ </view>
+ <loadMore id="loadMore" bind:loadData="loadData"></loadMore>
+
+ </view>

@@ -1,0 +1,37 @@
+.list{
+  padding-top:30rpx; 
+  
+}
+.item {
+  border-bottom:1px solid #e0e0e0;
+  background-color: white;
+}
+.item:last-child {
+  border-bottom-width: 0px;
+}
+.select-bless {
+  position: relative;
+  overflow: hidden;
+}
+.select-bless .box {
+  margin: 35rpx ;
+  float: right;
+  background: #f67f7f;
+  width: 35%;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: white;
+  border-radius: 99rpx;
+}
+.list.option .item {
+  padding: 15rpx 5%;
+}
+.list.option .item .clear {
+  clear: both;
+}
+.fixedBox {
+  position: absolute;
+  top: 0;
+  z-index: 22;
+}

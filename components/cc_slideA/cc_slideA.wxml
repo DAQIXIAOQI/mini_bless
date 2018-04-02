@@ -1,0 +1,13 @@
+<view class='container' >
+     <scroll-view scroll-x scroll-into-view="{{sid}}" scroll-with-animation='true'>
+    <view class='list-box' style="width:{{width}}" >
+       <block wx:for="{{imgurl}}" wx:key="slider">
+           <view class='img-box' data-index='{{index}}' bindtouchstart='touchstart' bindtap='tap'><imgBox src="{{item}}" ></imgBox></view>
+       </block>
+
+       <block wx:for="{{imgurl}}" wx:key="slider-pos">
+           <view id="{{'A'+index}}" class='img-pos' style="left:{{index == 0 ? ('0vw'):(index*itemWidth-(100-itemWidth)/2+'vw')}}"></view>
+       </block>
+    </view>
+   </scroll-view>
+</view>

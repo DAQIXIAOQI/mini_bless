@@ -1,0 +1,13 @@
+<!--参数：  -->
+<!--text：文字  -->
+<!--imgsrc：图片路径  -->
+<!--cid:外部传入的类名，用于按需写样式  -->
+<!--mark:唯一标识 -->
+<!--事件callback:点击后的回调函数，会把mark作为参数传回去  -->
+<view class='container {{cid}}' bindtap='tap'>
+   <view class='img-box' style='width:{{imgw}};height:{{imgw}}' ><imgBox src='{{imgsrc}}' ></imgBox>
+   </view> 
+   <view class='text'>
+     {{text}}
+   </view>
+</view>

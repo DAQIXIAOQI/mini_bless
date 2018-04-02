@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "cartA": "/components/cc_cartA/cc_cartA",
+    "loadMore": "/components/cc_loadMore/cc_loadMore"
+  }
+}

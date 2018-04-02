@@ -1,0 +1,67 @@
+.rankItem.items .right {float:right;color:#ee4b57;}
+.rankItem.items .right text {
+  margin-left:25rpx;
+}
+.rankItem.items .left {
+  display: inline-block;
+  width: 70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+    margin: 15rpx 0; 
+    float: left;
+    color:#9d9d9d;
+}
+.rankItem.items .main {
+  display: inline-block;
+  height: 100%;
+  color: #4b4b4b;
+}
+.rankItem.items .main .img-box{
+  float: left;
+  overflow: hidden;
+  width: 70rpx;
+  height: 70rpx;
+  margin: 15rpx; 
+  margin-right: 30rpx;
+  border-radius: 999rpx;
+}
+.rankItem.items .main .img-box image {
+  width: 100%;
+  height: 100%;
+}
+.rankItem.items {
+  height: 100%;
+}
+
+/*-------commentItem css------------*/
+.commentItem {
+   position: relative;
+   overflow: hidden;
+   padding: 20rpx;
+   background-color: white;
+}
+.commentItem .comment-user image {
+  display: inline-block;
+  width: 80rpx;
+  height: 80rpx;
+  float: left;
+  border-radius: 100rpx;
+  box-shadow: 0 0 1rpx #929292;
+}
+.commentItem .comment-user .comment-info {
+  margin-left: 110rpx;
+  line-height: 60rpx;
+}
+.commentItem .comment-user .comment-user-time {
+  color:#929292;
+  font-size: 30rpx;
+  display: inline-block;
+  margin:  0 15rpx;
+}
+.commentItem .comment-user .comment-main {
+  font-size: 35rpx;
+  line-height: 45rpx;
+}
+
+

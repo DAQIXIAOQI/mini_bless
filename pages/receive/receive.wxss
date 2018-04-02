@@ -1,0 +1,22 @@
+/* pages/receive/receive.wxss */
+.cart-box {
+  background-color: white;
+  float: left;
+  margin-bottom: 40rpx;
+}
+.column3 {
+  width: 31vw;
+  padding:2vw 1.15vw;
+}
+
+.column2 {
+  width: 44vw;
+  padding:5vw 1.5vw 2vw 4.5vw;
+  }
+.column2:nth-child(2n){
+    padding:5vw 4.5vw 2vw 1.5vw;
+}
+  .for-box{
+     position: relative;
+     overflow: hidden;
+  }

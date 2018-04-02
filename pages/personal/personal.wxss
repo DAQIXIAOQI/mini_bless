@@ -1,0 +1,63 @@
+
+.user-info {
+  width: 86vw;
+  height: 12vh;
+  position: relative;
+  background-size: 100% 100%;
+  padding: 5vh 7vw;
+}
+
+.user-info .avatar {
+  float: left;
+  margin-top: -5rpx;
+  width: 12vh;
+  overflow: hidden;
+  border:5rpx white solid;
+  border-radius: 999rpx;
+  height: 12vh;
+}
+.user-info .info {
+  margin-left: 16vh;
+  height: 12vh;
+  color:#fff;
+  font-size: 35rpx;
+}
+.info view {
+  height: 4vh;
+  line-height: 4vh;
+}
+.info .info-id {
+  font-size: 25rpx;
+}
+.info .info-like {
+  font-size: 25rpx;
+  border-top: 1px solid white;
+}
+
+.list {
+  margin-top: 3vh;
+  background-color: #ffffff;
+}
+.list .item {
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 5vw;
+  border-bottom:1px solid #e0e0e0;
+  color: #4b4b4b;
+}
+.list .item .left {
+  color: #40bc4e;
+  margin-right: 20rpx;
+}
+.list .item text {
+display: inline-block;
+}
+.list .item .right {
+  float: right;
+  color:#c7c7c7;
+}
+
+.list .item:last-child {
+  border-bottom-width: 0px;
+}
+   

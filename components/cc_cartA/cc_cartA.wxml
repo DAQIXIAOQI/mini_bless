@@ -1,0 +1,24 @@
+<!--参数：  -->
+<!--width：组件占据的宽度  -->
+<!--imgh：图片宽高比（根据传入的width值去改变img的高度）  -->
+<!--maintext：图片盒子中间的文字，竖直、水平居中于图片盒子  -->
+<!--leftext：底部文本1  -->
+<!--imgsrc:图片路径  -->
+<!--righttext：底部文本2  -->
+<!--mark：组件特定的标识（ID）  -->
+<!--title:标题  -->
+<!--cid:插入外层的class，用于承载业务样式  -->
+<!--事件callback：当组件被点击时会触发  -->
+<view class='container {{cid}}'  bindtap='tap'>
+  <view class='img-box' style='height:{{imgh}}'>
+    <imgBox wx:if='{{imgsrc!=""}}' src='{{imgsrc}}'></imgBox>
+    <text wx-if='{{maintext!=""}}'>{{maintext}}</text>
+  </view>
+   <view class='bt-text' wx:if="{{title!=''}}">
+     <view class='title'>{{title}}</view>
+  </view>
+  <view class='bt-text'>
+    <view class='left-text'>{{lefttext}}</view>
+    <view class='right-text'>{{righttext}}</view>
+  </view>
+</view>

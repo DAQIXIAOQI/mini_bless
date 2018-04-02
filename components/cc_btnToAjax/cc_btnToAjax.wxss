@@ -1,0 +1,12 @@
+/* components/cc_btnToAjax/cc_btnToAjax.wxss */
+.editSave {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+  height: 60rpx;
+  line-height: 60rpx;
+  color:#929292;
+  background-color: #f67f7f;
+  border-radius: 999rpx;
+  margin-top: 120rpx;
+}

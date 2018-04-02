@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "imgBox": "/components/cc_imgBox/cc_imgBox"
+  }
+}

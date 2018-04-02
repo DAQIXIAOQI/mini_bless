@@ -1,0 +1,4 @@
+ <view class='loadMore' catchtap='loading'>
+ <text hidden='{{isLoadAll||isLoading}}' class='iconfont icon-fenxiang-tianchong'>更多</text><text hidden='{{!isLoadAll}}'>加载完毕</text><text hidden='{{!isLoading}}' class='iconfont icon-shezhi'>loading</text>
+ 
+ </view>

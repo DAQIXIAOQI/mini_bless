@@ -1,0 +1,61 @@
+
+<import src='../../template/template.wxml' />
+<view class='container gray-content'>
+  <view class='slide-box box'>
+    <slide imgurl='{{imgUrls}}'></slide>
+  </view>
+
+  <view class='bless-box box'>
+    <view class='main' style='background-image:url(http://dev.guotu.zsylife.cn/minidata/editBox.png)'>
+      <inlineAbstract cid='bless sender' imgw="80rpx" class='send-box' text="对对对" imgsrc='http://dev.guotu.zsylife.cn/minidata/index01.png'></inlineAbstract>
+      <inlineAbstract cid='bless geter' imgw="80rpx" class='rece-box' text="擦擦擦" imgsrc='http://dev.guotu.zsylife.cn/minidata/index01.png'></inlineAbstract>
+
+      <scroll-view class='bless' scroll-y> 这是一段祝福祝福这是一段祝福祝福这是一段祝福福祝福 这是一段祝福祝福这是一段祝福祝福这是一段祝福福祝福这是一段祝福祝福这是一段祝福祝福这是一段祝福福祝福这是一段祝福祝福这是一段祝福祝福这是一段祝福福祝福
+      </scroll-view>
+
+
+    </view>
+
+
+
+  </view>
+  <view class='toggle-box {{ismoving? "move" : ""}}'>
+    <view  hidden='{{isShowComment}}'>
+      <view class='comment-box'>
+        <view class='comment'>
+          <view class='text'>
+            <text class='iconfont icon-fenxiang-tianchong'>填写留言：</text>
+          </view>
+          <view class='textarea-box'>
+            <textarea type='text'></textarea>
+          </view>
+        </view>
+        <view class='comment-options'>
+          <text class='option'><text class='iconfont icon-fenxiang-tianchong'></text>点赞</text>
+          <text class='option' bindtap='toggleComment'>查看留言<text class='iconfont icon-fenxiang-tianchong'></text></text>
+        </view>
+      </view>
+
+      <view class='btn-box'>
+        <view class='btn'>我也要送祝福</view>
+      </view>
+
+      <view class='options-box'>
+        <view class='item'>
+          <inlineAbstract class="fun" cid='editpage' mark='redPack' text='收红包' imgsrc="http://dev.guotu.zsylife.cn/minidata/index01.png" bind:callback="con"></inlineAbstract>
+          <inlineAbstract class="fun" cid='editpage' text='收卡券' imgsrc="http://dev.guotu.zsylife.cn/minidata/index01.png"></inlineAbstract>
+          <view class='clear'></view>
+        </view>
+      </view>
+    </view>
+    <view class='comment-list-box' hidden='{{!isShowComment}}'> 
+         <text bindtap="toggleComment">返回</text>  
+         <view class='comment-title'>留言345</view> 
+         <view class='comment-item' wx:for='{{commentList}}' wx:key='comment-list'>
+         <template is="commentItem" data="{{item}}">
+         </template>
+         </view>
+         <loadMore id='commentLoad' bind:loadData='loadComment'></loadMore>
+    </view>
+  </view>
+</view>

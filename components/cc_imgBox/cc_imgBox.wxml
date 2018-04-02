@@ -1,0 +1,7 @@
+<!--image淡入显示-->
+<!--参数：  -->
+<!--src：图片路径  -->
+<!--preview：点击是否可以预览  -->
+<view class='img-box {{isLoad ? "load":""}}' >
+   <image class='img {{isLoad ? "show":""}}' src = '{{src}}' bindload='load' bindtap='tap'></image>
+</view>

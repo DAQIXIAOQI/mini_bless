@@ -1,0 +1,96 @@
+.input-container {
+  width: 100%;
+  font-size: 33rpx;
+  
+  /*---*/
+  background-color: white;
+ 
+  
+}
+.input-content text{
+  width: 20%;
+  text-align: right;
+  float: left;
+  display: inline-block;
+  color: #929292;
+  padding: 0 2%;
+  height: 100%;
+}
+.input-content {
+  height: 100%;
+  line-height: 100rpx;
+}
+.input-content.unsingle {
+  line-height: inherit;
+}
+.input-content.noclear .input-box textarea ,.input-content.noclear .input-box input {
+  width: 90%;
+}
+.input-content.noclear .input-box icon {
+  display: none;
+}
+.input-content .input-box {
+  width: 70%;
+  margin-left:25%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.input-content .input-box.full {
+  width: 100%;
+  margin-left: 0%;
+}
+.input-content .input-box input,.input-content .input-box textarea {
+  display: inline-block;
+  height: 100%;
+  padding: 0 5%; 
+  width: 75%;
+  min-width: 75%;
+}
+.input-content.unsingle .input-box textarea {
+  height:90%;
+  padding: 2.5% 5%;
+}
+.input-content .input-box icon {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding:0 2%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10%;
+  transition:all ease-in 0.1s;
+   animation: rotate linear 2s infinite; 
+  transform-origin: center;
+}
+.input-content .input-box icon.hide {
+ padding-top: 100rpx;
+ opacity: 0;
+}
+.input-notice {
+  margin-left: 30%;
+  font-size: 20rpx;
+  color: red;
+  line-height: 50rpx;
+  height: 50rpx;
+}
+
+@keyframes rotate 
+ {
+100%  {transform: rotate(360deg)}
+}
+
+
+
+/* 私有class && 业务class */
+.bless_word .input-notice {
+   margin: 0 auto;
+   text-align: center;
+   height: 75rpx;
+   line-height: 75rpx;
+   margin-top: -75rpx;
+   color:#929292;
+   font-size: 30rpx;  
+}

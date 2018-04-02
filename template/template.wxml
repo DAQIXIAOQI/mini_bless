@@ -1,0 +1,29 @@
+<template name='rankItem'>
+
+  <view class='rankItem items'>
+    <view class='left'>
+      <imgBox wx:if="{{item.rank < 3}}" src='http://dev.guotu.zsylife.cn/minidata/ward1.png'></imgBox>
+      <text wx:if="{{item.rank>=3}}">{{item.rank}}</text>
+    </view>
+    <view class='main'>
+      <view class='img-box'>
+        <image src='{{item.avatar}}'></image>
+      </view>
+      <text>{{item.name}}</text>
+    </view>
+    <text class='right'>{{item.num}}<text class='iconfont icon-fenxiang-tianchong'></text></text>
+  </view>
+</template>
+
+<template name='commentItem'>
+  <view class='commentItem'>
+    <view class='comment-user'>
+      <image src='{{item.avatar}}'></image>
+      <view class='comment-info'>
+        <text class='comment-user-name'>{{item.name}}</text>
+        <text class='comment-user-time'>{{item.time}}</text>
+        <view class='comment-main'> {{item.comment}}</view>
+      </view>
+    </view>
+  </view>
+</template>

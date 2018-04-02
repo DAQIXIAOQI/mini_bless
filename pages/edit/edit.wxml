@@ -1,0 +1,35 @@
+<view class='content gray-content'>
+    
+   <view class='list'>
+         <view class='item'>
+         <inputBox cname="你的名字" height="100rpx" name="my_name" setglobal='bless' value="大苏打" isrequired='{{true}}' >
+         </inputBox></view>
+          <view class='item'>
+          <inputBox cname="对方名字" height="100rpx" name="his_name" setglobal='bless' isrequired='{{true}}'>
+         </inputBox></view>
+   </view>
+   
+   <view class='list'>
+       <view class='item' hidden='{{!textareaShow}}' >
+          <inputBox   id="bless_word" name="bless_word" single="{{false}}" clear="{{false}}" height="300rpx" setglobal="bless" value="" isrequired='{{true}}' notice="祝福语只能在60字内哦~" placeholder="请填写你的祝福语哦~" maxlength="60" ></inputBox>
+       </view>
+   </view>
+
+   <view class='select-bless'>
+   <view class='box' bindtap='showList'>  
+      选择祝福<icon class='iconfont  icon-fenxiang-tianchong'></icon>
+  </view>
+   </view>
+
+   <view class='list option'>
+      <view class='item'>
+        <inlineAbstract class="fun"  cid='editpage' mark='redPack' text='发红包' imgsrc="http://dev.guotu.zsylife.cn/minidata/index01.png"   bind:callback="con"></inlineAbstract>
+        <inlineAbstract class="fun" cid='editpage' text='发卡券' imgsrc="http://dev.guotu.zsylife.cn/minidata/index01.png"></inlineAbstract>
+         <view class='clear'></view> 
+      </view>   
+   </view>
+
+   <view><btnToAjax cid='editSave' text="保存" url="102313" type="POST" globalval="bless"></btnToAjax></view>
+   <fulllist class='fixedBox' bind:receive='changeBlessWord' bind:close='toggleTextarea' id='blessList'></fulllist>
+   <redPacket id="redPacket" bind:close='toggleTextarea' class='fixedBox'></redPacket>
+</view>

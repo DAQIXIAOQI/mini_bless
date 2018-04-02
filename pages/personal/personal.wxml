@@ -1,0 +1,25 @@
+<view class="content gray-content">
+   <view class='user-info' style="background-image:url({{topBg}})">
+       <view class='avatar'><imgBox src='{{userInfo.avatarurl}}'></imgBox></view>
+      
+       <view class='info'>
+          <view class='info-name'>{{userInfo.nickname}}</view>
+          <view class='info-id'>ID : {{userInfo.id}}</view>
+           <view class='info-like'><text>收到赞 1</text> <text>送出赞 x</text></view>
+       </view>
+   </view>
+     
+  <view class='user-notice list'>
+      <view class='item'><text class=' left iconfont icon-fenxiang-tianchong'></text> <text class='main'>提醒</text> <text class='iconfont icon-fenxiang-tianchong right '></text></view>
+
+  </view>
+  <view class='user-bless list'>
+  <view class='item' bindtap='toPage' data-name="收到的祝福" data-url="receive" data-column="2"><text class='left iconfont icon-fenxiang-tianchong'></text> <text class='main'>收到的祝福</text> <text class='iconfont icon-fenxiang-tianchong right '></text></view>
+    <view class='item' bindtap='toPage' data-name="送出的祝福" data-url="send" data-column="3"><text class=' left iconfont icon-fenxiang-tianchong'></text> <text class='main'>送出的祝福</text> <text class='iconfont icon-fenxiang-tianchong right '></text></view>
+  </view>
+  <view class='user-reward list'>
+   <view class='item' bindtap='toPage' data-name="我的红包" data-url="redpacket" data-column="2"><text class=' left iconfont icon-fenxiang-tianchong'></text> <text class='main'>我的红包</text> <text class='iconfont icon-fenxiang-tianchong right '></text></view>
+    <view class='item' bindtap='toPage' data-name="我的卡券" data-url="cart" data-column="3"><text class=' left iconfont icon-fenxiang-tianchong'></text> <text class='main'>我的卡券</text> <text class='iconfont icon-fenxiang-tianchong right '></text></view>
+  </view>
+
+</view>

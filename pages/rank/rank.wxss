@@ -1,0 +1,28 @@
+@import "../../template/template.wxss" ;
+
+.item {
+  border-bottom:1px solid #e0e0e0;
+  padding: 0 4vw;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #ffffff;
+  font-size: 30rpx;
+}
+.scroll {
+  height:69vh;
+ 
+}
+.item:last-child {
+  border-bottom-width: 0px;
+}
+
+.item.my-rank  {
+  color:#f07e74;
+  height: 6vh;
+  line-height: 6vh;
+  
+}
+.item.loadMore {
+  text-align: center;
+  color:#f07e74;
+}

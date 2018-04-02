@@ -1,0 +1,22 @@
+<!--这里用的假数据，故不需ajax请求  -->
+<!--事件receive：item被点击时触发，会把item里的数据返回  -->
+<!--外部可用函数：  -->
+<!--toggle()：控制list显示与否  -->
+<view class='list-container {{isShow? "show":""}}'>
+  <view class='top'>
+    <text bindtap='close'> 《 </text>
+    <scroll-view class='tabs' scroll-x>
+      <view bindtap='tabClick' class='tabs-item {{item.id == nowList.id ? "hover":""}}' wx:for='{{tabData}}' wx:key='listTab' data-id='{{item.id}}'>{{item.text}}</view>
+    </scroll-view>
+  </view>
+
+  <scroll-view class='content' scroll-y>
+    <view class='item-box'>
+      <view class='item' hover-class='hover' bindtap='sendText' data-text='{{item.text}}' wx:for='{{nowList.data}}' wx:key='listData' data-fid='{{nowList.id}}' data-tid='{{item.tid}}'>
+        <view class='item-text'>
+          {{item.text}}
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

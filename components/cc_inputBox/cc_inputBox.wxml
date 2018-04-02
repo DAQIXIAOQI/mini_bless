@@ -1,0 +1,31 @@
+<!--接受参数如下：-->
+<!--cname：中文名称  -->
+<!--name： 重要！英文名称，存放数据的名字，同时生成一个name值的class名  -->
+<!--setglobal ：重要！存入globaData的组名。存储形式为：app.globalData[setglobal][name]  -->
+<!--isrequire：布尔值，是否必填项-->
+<!--placeholder：字符串，默认值-->
+<!--value: 字符串，初始值-->
+<!--maxlength：数字，允许输入的最大长度-->
+<!--notice:字符串,红色提示语-->
+<!--height:输入框高度-->
+<!--single:单行/多行，单行使用input框，多行使用textarea框  -->
+<!--clear：是否显示清除输入按钮，默认为true  -->
+<!--输入的数据会自动存入globalData[setglobal][name]里-->
+<!--结束-->
+<view class='input-container {{name}} ' style='height:{{height == "" ? "60rpx" : height}}'>
+  <view class='input-content {{!clear ? "noclear" :""}}' wx:if="{{single}}">
+    <text class='name' wx:if='{{cname!=""}}'>{{cname}}:</text>
+    <view class='input-box {{cname == "" ? "full":""}}'>
+       <input  bindinput='input' value='{{value}}' type='text' maxlength='{{maxlength}}' placeholder='{{placeholder?placeholder:"请输入"+cname}}' ></input> 
+      <icon type='cancel' color='#000' class='{{value == "" ? "hide" : ""}}' bindtap='clear'></icon>
+    </view>
+  </view>
+   <view class='input-content unsingle {{!clear ? "noclear" :""}}' wx:if="{{!single}}" >
+    <text class='name' wx:if='{{cname!=""}}'>{{cname}}:</text>
+    <view class='input-box {{cname == "" ? "full":""}}'>
+        <textarea   bindinput='input' value='{{value}}' type='text' maxlength='{{maxlength}}' placeholder='{{placeholder?placeholder:"请输入"+cname}}' ></textarea> 
+      <icon type='cancel' color='#000' class='{{value == "" ? "hide" : ""}}' bindtap='clear'></icon>
+    </view>
+  </view>
+  <view class='input-notice'>{{notice?notice:''}}</view>
+</view>

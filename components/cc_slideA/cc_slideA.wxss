@@ -1,0 +1,28 @@
+.container {
+  height: 33.3vw;
+}
+.container .list-box {
+  height: 33.3vw;
+  position: absolute;
+  overflow: hidden;
+}
+.container .list-box .img-box {
+  width: 55vw;
+  height: 100%;
+  float: left;
+  margin: 0 2vw;
+  display: inline-block;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.container .list-box .img-pos {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  background-color: red;
+}
+scroll-view {
+  width: 100%;
+  height: 100%;
+}
+
