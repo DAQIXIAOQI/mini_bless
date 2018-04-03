@@ -27,7 +27,11 @@ Component({
      height:{
        type:String,
        value:''
-     }
+     },
+    mark:{
+      type:String,
+      value:''
+    }
   },
   data: {
 

@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/get/get",
     "pages/save/save",
     "pages/personal/personal",
-    "pages/receive/receive",
+    "pages/rank/rank",  
     "pages/edit/edit",
-    "pages/rank/rank",
-    "pages/index/index"
+    "pages/receive/receive"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -18,15 +18,21 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath":"images/index01.png",
+       "selectedIconPath":"images/index011.png"
       },
       {
         "pagePath": "pages/rank/rank",
-        "text": "排行榜"
+        "text": "排行榜",
+        "iconPath": "images/index02.png",
+        "selectedIconPath": "images/index022.png"
       },
       {
         "pagePath": "pages/personal/personal",
-        "text": "个人中心"
+        "text": "个人中心",
+        "iconPath": "images/index03.png",
+        "selectedIconPath": "images/index033.png"
       }
     ],
     "color": "#8e8e8e",

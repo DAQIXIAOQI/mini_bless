@@ -1,7 +1,7 @@
 <import src='../../template/template.wxml' />
 <view class='content gray-content'>
      
-     <modelT height='25vh' lefttext="规则" righttext="分享" bgsrc="http://dev.guotu.zsylife.cn/minidata/rankbg.png"></modelT>
+     <modelT height='25vh' mark='rank' lefttext="规则" righttext="分享" bgsrc="http://dev.guotu.zsylife.cn/minidata/rankbg.png" bind:rightclick='r' bind:leftclick='showRule'></modelT>
 
      <view class='rank-list'>
         <view class='item my-rank'>我收到de点赞总数</view>
@@ -9,7 +9,9 @@
         <view class='item' wx:for="{{listData}}"  wx:key="rankList">
           <template is='rankItem' data="{{item}}"></template>  
         </view>
-         <view class='item loadMore' catchtap='loadData'><text hidden='{{loadAll||isLoading}}' class='iconfont icon-fenxiang-tianchong'></text><text hidden='{{!loadAll}}'>加载完毕</text><text hidden='{{!isLoading}}' class='iconfont icon-shezhi'></text></view>
+         <view class='item'>
+           <loadMore id='loadMore' bind:loadData='loadData'></loadMore>
+         </view>
          </scroll-view>
         
      </view>

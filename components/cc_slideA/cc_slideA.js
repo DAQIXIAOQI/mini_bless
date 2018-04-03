@@ -53,7 +53,7 @@ Component({
       clearInterval(interval.timer);
       interval.timer = setInterval(function(){
             this.stoggle();
-      }.bind(interval),1000);
+      }.bind(interval),5000);
     },
     touchstart(e){
       interval.nowPos = e.currentTarget.dataset.index ;

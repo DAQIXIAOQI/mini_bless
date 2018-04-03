@@ -15,6 +15,10 @@ Page({
      wx.setNavigationBarTitle({
        title: options.name || '出错了!'
      });
+     wx.setNavigationBarColor({
+       frontColor: '#000000',
+       backgroundColor: '#fafafa'
+     });
      console.log(this.data.options);
   },
   onReady: function () {

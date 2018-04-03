@@ -1,8 +1,14 @@
 /* pages/receive/receive.wxss */
+.container {
+  padding-bottom: 100rpx;
+}
 .cart-box {
   background-color: white;
   float: left;
-  margin-bottom: 40rpx;
+  margin-bottom: 20rpx;
+  border:1px solid #e0e0e0;
+border-width:0px 0 1px 0;
+
 }
 .column3 {
   width: 31vw;
@@ -19,4 +25,5 @@
   .for-box{
      position: relative;
      overflow: hidden;
+      border-top:1px solid #e0e0e0;
   }

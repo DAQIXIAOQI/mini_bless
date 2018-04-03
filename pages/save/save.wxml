@@ -5,11 +5,10 @@
 
   <view class='bless-box box'>
     <view  class='main'style='background-image:url(http://dev.guotu.zsylife.cn/minidata/editBox.png)'>
-      <inlineAbstract cid='bless sender' imgw="80rpx"  class='send-box'  text="对对对" imgsrc='http://dev.guotu.zsylife.cn/minidata/index01.png'></inlineAbstract>
-        <inlineAbstract cid='bless geter' imgw="80rpx" class='rece-box' text="擦擦擦" imgsrc='http://dev.guotu.zsylife.cn/minidata/index01.png'></inlineAbstract>
+      <inlineAbstract cid='bless sender' imgw="80rpx"  class='send-box'  text="{{blessData.my_name.value}}" imgsrc='{{blessData.my_avatar.value}}'></inlineAbstract>
+        <inlineAbstract cid='bless geter' imgw="80rpx" class='rece-box' text="{{blessData.his_name.value}}" imgsrc='{{app.globalData.userInfo.avatarurl}}'></inlineAbstract>
          
-            <scroll-view class='bless' scroll-y> 这是一段祝福祝福这是一段祝福祝福这是一段祝福福祝福
-            这是一段祝福祝福这是一段祝福祝福这是一段祝福福祝福这是一段祝福祝福这是一段祝福祝福这是一段祝福福祝福这是一段祝福祝福这是一段祝福祝福这是一段祝福福祝福</scroll-view>
+            <scroll-view class='bless' scroll-y> {{blessData.bless_word.value}}</scroll-view>
            
      
     </view>
@@ -22,16 +21,16 @@
   <view class='option-box box'>
     <view class=' items'>
       <view class='left'>
-        <text class='iconfont icon-fenxiang-tianchong'></text>
+        <text class='iconfont icon-zhuantiliulan'></text>
       </view>
       <view class='main'>
         <text>祝福浏览</text>
       </view>
-       <view class='right'>5<text class='iconfont icon-fenxiang-tianchong'></text></view>
+       <view class='right'>5<text class='iconfont'></text></view>
     </view>
      <view class=' items'>
       <view class='left'>
-        <text class='iconfont icon-fenxiang-tianchong'></text>
+        <text class='iconfont icon-dianzan'></text>
       </view>
       <view class='main'>
         <text>祝福点赞</text>
@@ -40,7 +39,7 @@
     </view>
      <view class=' items'>
       <view class='left'>
-        <text class='iconfont icon-fenxiang-tianchong'></text>
+        <text class='iconfont icon-liuyan1'></text>
       </view>
       <view class='main'>
         <text>祝福留言</text>
@@ -49,7 +48,7 @@
     </view>
     <view class=' items'>
       <view class='left'>
-        <text class='iconfont icon-fenxiang-tianchong'></text>
+        <text class='iconfont icon-jiangbei '></text>
       </view>
       <view class='main'>
         <text>祝福排名</text>
@@ -60,11 +59,12 @@
 
   <view class='btn-box'>
         <view class='edit-box'>
-           <view class='btn'><text class='iconfont icon-fenxiang-tianchong'></text>编辑</view>
-           <view class='btn'><text class='iconfont icon-fenxiang-tianchong'></text>新建</view>
+           <view class='btn1' bindtap='toEdit'><text class='iconfont icon-arrow-left'></text>返回</view>
+           <view class='btn1'  bindtap='toIndex'><text class='iconfont icon-arrow-left'></text>新建</view>
+    
         </view>
         <view class='send-box'>
-          <view class='btn'><text class='iconfont icon-fenxiang-tianchong'></text>发送</view>
+          <button open-type='share' class='btn'><text class='iconfont icon-send'></text>发送</button>
         </view>     
   </view>
 </view>

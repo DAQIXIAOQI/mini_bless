@@ -1,4 +1,4 @@
-// pages/get/get.js
+const app = getApp()
 Page({
   data: {
     imgUrls: ['http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png']  ,
@@ -8,20 +8,23 @@ Page({
     maxl: 25,
     loadNum: 6,
     isShowComment:false,
-    ismoving:false
+    ismoving:false,
+    isLike:false,
+    isLogin:false
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
+    let that = this;
+    if (!app.globalData.userInfo) {
+      app.login(function () { that.setData({ isLogin: true, userInfo: app.globalData.userInfo }); });
+    }
+    else{
+      that.setData({ isLogin: true, userInfo: app.globalData.userInfo });
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
+   
+  
     this.commentLoad = this.selectComponent("#commentLoad");
   },
   loadComment() {
@@ -59,5 +62,17 @@ Page({
     },2500);
   
    
+  },
+  toggleLike(){
+    let that = this ;
+    this.setData({
+      isLike:!that.data.isLike
+    });
+    console.log(this.data.isLike);
+  },
+  toPage(){
+     wx.switchTab({
+       url: '/pages/index/index',
+     })
   }
 })

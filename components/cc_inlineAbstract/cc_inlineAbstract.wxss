@@ -20,9 +20,7 @@
   width: 80rpx;
   height: 80rpx;
 } 
-.container.editpage .img-box {
-  margin: 0 auto;
-}
+
 .container.editpage .text {
   font-size: 30rpx;
   height: 30rpx;
@@ -38,6 +36,12 @@
  margin-top: -18rpx;
  margin-left: 8rpx;
 }
+.container.sender .img-box {
+  float: left;
+}
 .container.geter {
   margin:0 30rpx 50rpx 0; 
+}
+.container.geter .img-box {
+  float: right;
 }

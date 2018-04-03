@@ -2,6 +2,7 @@
   "usingComponents": {
     "imgBox": "/components/cc_imgBox/cc_imgBox",
     "tNotice": "/components/cc_tbNotice/cc_tbNotice",
-    "modelT": "/components/cc_modelT/cc_modelT"
+    "modelT": "/components/cc_modelT/cc_modelT",
+    "loadMore": "/components/cc_loadMore/cc_loadMore"
   }
 }

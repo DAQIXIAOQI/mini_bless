@@ -1,8 +1,8 @@
 .container {
-  height: 33.3vw;
+  height: 40vw;
 }
 .container .list-box {
-  height: 33.3vw;
+  height: 40vw;
   position: absolute;
   overflow: hidden;
 }

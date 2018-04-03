@@ -56,14 +56,15 @@ Component({
   ,
   methods: {
     input(e) {
+      let that = this ;
       let value = (e.detail ? e.detail.value : e);
       if(!this.checkLength(value)) {
         wx.showToast({
-          title: '选择的模板长度过长~！',
+          title: '输入过长，只能显示'+that.data.maxlength+'个字符',
           icon: 'none',
           duration: 1000
         })
-        return
+        value = value.slice(0,that.data.maxlength);
       }
       if (app.globalData[this.data.setglobal] && app.globalData[this.data.setglobal][this.data.setglobal]) {
         app.globalData[this.data.setglobal][this.data.name].value = value;

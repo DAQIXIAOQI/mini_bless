@@ -6,9 +6,7 @@
   border-bottom:1px solid #e0e0e0;
   background-color: white;
 }
-.item:last-child {
-  border-bottom-width: 0px;
-}
+
 .select-bless {
   position: relative;
   overflow: hidden;
@@ -24,6 +22,11 @@
   color: white;
   border-radius: 99rpx;
 }
+.select-bless .box .iconfont {
+font-size:40rpx;
+margin-left:10rpx;
+}
+
 .list.option .item {
   padding: 15rpx 5%;
 }

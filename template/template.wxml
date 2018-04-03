@@ -2,7 +2,7 @@
 
   <view class='rankItem items'>
     <view class='left'>
-      <imgBox wx:if="{{item.rank < 3}}" src='http://dev.guotu.zsylife.cn/minidata/ward1.png'></imgBox>
+      <imgBox wx:if="{{item.rank < 3}}" src='http://dev.guotu.zsylife.cn/minidata/ward{{item.rank+1}}.png'></imgBox>
       <text wx:if="{{item.rank>=3}}">{{item.rank}}</text>
     </view>
     <view class='main'>
@@ -11,7 +11,7 @@
       </view>
       <text>{{item.name}}</text>
     </view>
-    <text class='right'>{{item.num}}<text class='iconfont icon-fenxiang-tianchong'></text></text>
+    <text class='right'>{{item.num}}<text class='iconfont icon-dianzan'></text></text>
   </view>
 </template>
 

@@ -1,3 +1,4 @@
+@import  "/font/iconfont.wxss" ;
 .container {
   width: 100%;
   background: lightblue;
@@ -12,7 +13,6 @@
 .btn {
   position: absolute; 
   top: 10%;
-  width: 200rpx;
   overflow: hidden;
 }
 .left-btn {
@@ -23,8 +23,23 @@
 }
 
 .main {
-  
-  
   margin: 0 auto;
   overflow: hidden;
+}
+
+.rank.container .btn button {
+   width:170rpx;
+height:60rpx;
+line-height:60rpx;
+color:white;
+border-radius:999rpx;
+background-color:#f48f84;
+font-size:30rpx;
+
+}
+.rank.container .left-btn{
+   left: -30rpx;
+}
+.rank.container .right-btn{
+   right: -30rpx;
 }

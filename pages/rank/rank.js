@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
     wx.setNavigationBarTitle({
 
-      title: "排行榜"
+      title: "获赞排行榜"
 
     });
     wx.setNavigationBarColor({
@@ -30,71 +30,43 @@ Page({
     });
   },
   onReady: function () {    
+     this.loadMore = this.selectComponent("#loadMore");
      this.loadData();
-     
-     
   },
   loadData(){
       let that = this ;
       let arr = this.data.listData;
       let rank = arr.length ;
-      if (this.data.loadAll) return;
-      that.setData({ isLoading: true });
       for (let i = 0; i < that.data.loadNum; i++) {
         if (arr.length > that.data.maxl) {
-          that.setData({ loadAll: true,isLoading:false })
+          this.loadMore.loadAll();
           break
         }
         arr.push({
           avatar: 'http://dev.guotu.zsylife.cn/minidata/index02.png',
           name: '大家阿卡~!',
-          num: i,
+          num: that.data.maxl-rank-i,
           rank:rank + i
         });
       }
+      this.loadMore.loaded();
       that.setData({
-        isLoading: false,
         listData: arr
       });
     
+  },
+  r(){
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  },
+  showRule(){
+     wx.showModal({
+       title: '排名规则',
+       content: '这是规则规则这是规则规则这是规则规则这是规则规则这是规则规则这是规则规则这是规则规则这是规则规则这是规则规则这是规则规则这是规则规则',
+       showCancel:false,
+       confirmText:'知道了'
+     })
   }
-  ,
-  onShow: function () {
   
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

@@ -2,7 +2,7 @@
     
    <view class='list'>
          <view class='item'>
-         <inputBox cname="你的名字" height="100rpx" name="my_name" setglobal='bless' value="大苏打" isrequired='{{true}}' >
+         <inputBox cname="你的名字" height="100rpx" name="my_name" setglobal='bless' value="{{userInfo.nickName}}" isrequired='{{true}}' >
          </inputBox></view>
           <view class='item'>
           <inputBox cname="对方名字" height="100rpx" name="his_name" setglobal='bless' isrequired='{{true}}'>
@@ -17,19 +17,20 @@
 
    <view class='select-bless'>
    <view class='box' bindtap='showList'>  
-      选择祝福<icon class='iconfont  icon-fenxiang-tianchong'></icon>
+      选择祝福<icon class='iconfont  icon-jiantouxiaxi'></icon>
   </view>
    </view>
 
    <view class='list option'>
       <view class='item'>
-        <inlineAbstract class="fun"  cid='editpage' mark='redPack' text='发红包' imgsrc="http://dev.guotu.zsylife.cn/minidata/index01.png"   bind:callback="con"></inlineAbstract>
-        <inlineAbstract class="fun" cid='editpage' text='发卡券' imgsrc="http://dev.guotu.zsylife.cn/minidata/index01.png"></inlineAbstract>
+        <inlineAbstract class="fun"  cid='editpage' mark='redPacket' text='发红包' imgsrc="http://dev.guotu.zsylife.cn/minidata/red.png"   bind:callback="con"></inlineAbstract>
+        <inlineAbstract class="fun" cid='editpage' mark='cartPacket' text='发卡券' imgsrc="http://dev.guotu.zsylife.cn/minidata/cart.png"  bind:callback="con" ></inlineAbstract>
          <view class='clear'></view> 
       </view>   
    </view>
 
-   <view><btnToAjax cid='editSave' text="保存" url="102313" type="POST" globalval="bless"></btnToAjax></view>
+   <view><btnToAjax cid='editSave' text="保存" url="102313" type="POST" globalval="bless" bind:ajaxback='save'></btnToAjax></view>
    <fulllist class='fixedBox' bind:receive='changeBlessWord' bind:close='toggleTextarea' id='blessList'></fulllist>
-   <redPacket id="redPacket" bind:close='toggleTextarea' class='fixedBox'></redPacket>
+   <redPacket id="redPacket" bind:close='toggleTextarea' bind:submit='giftSet' class='fixedBox' title='发红包'></redPacket>
+   <redPacket id="cartPacket" bind:close='toggleTextarea'  bind:submit='giftSet' class='fixedBox' _type='cartPacket' title='发卡券'></redPacket>
 </view>

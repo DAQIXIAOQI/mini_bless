@@ -1,13 +1,35 @@
-
 <view class='container {{isShow? "show":""}}'>
-     <view class='user-input'>
-     <view class='box'>
-        <text class='name'>总金额</text> <text class='unit'>元</text><input type='number' class='value' bindinput='cmoney'   placeholder='0.00' value='{{mValue}}'></input></view>
-         <view class='box'>
-        <text class='name'>红包个数</text> <text class='unit'>个</text><input type='number' class='value' bindinput='cnum'   placeholder='0' value='{{mNum}}'></input></view>
-     </view>  
+  <view class='user-input'>
+    <view wx:if="{{_type=='redPacket'}}">
+      <view class='box'>
+        <text class='name'>总金额</text>
+        <text class='unit'>元</text>
+        <input type='number' class='value' bindinput='cmoney' placeholder='0.00' value='{{mValue}}'></input>
+      </view>
+      <view class='box'>
+        <text class='name'>红包个数</text>
+        <text class='unit'>个</text>
+        <input type='number' class='value' bindinput='cnum' placeholder='0' value='{{mNum}}'></input>
+      </view>
+    </view>
+      <view wx:if="{{_type=='cartPacket'}}">
+    <view class='box'>
+      <text class='name'>卡券类型</text>
+      <text class='unit'>{{mNum}}</text>
+    </view>
+    <view class='box'>
+      <text class='name'>卡券数量</text>
+      <text class='unit'>个</text>
+      <input type='number' class='value' bindinput='cmoney' placeholder='0' value='{{mValue}}'></input>
+    </view>
+  </view>
+  </view>
 
-     <view class='total '>￥{{ mTotal!="NaN" ? mTotal : "0.00"}}</view>
-<button class='submit  {{ ((mValue !="")&&(mNum !="")) ? "cur" :"" }}' bindtap='close'>塞钱进红包</button>
-<view class='notice'>未领取的红包，将于24小时后发起退款</view>
+
+
+
+  <view  wx:if="{{_type=='redPacket'}}" class='total '>￥{{ mTotal!="NaN" ? mTotal : "0.00"}}</view>
+  <button  class='submit  {{ ((mValue !="")&&(mNum !="")) ? "cur" :"" }}' bindtap='submit'>{{title}}</button>
+  <button class='cancel submit'bindtap='close'>关闭</button>
+  <view class='notice'>未领取的红包，将于24小时后发起退款</view>
 </view>

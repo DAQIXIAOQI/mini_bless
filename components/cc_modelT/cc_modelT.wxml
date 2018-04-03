@@ -6,16 +6,18 @@
 <!--bgsrc：背景图片链接  -->
 <!--lefttext:左侧按钮文字  -->
 <!--righttext：右侧按钮文字  -->
+<!--mark:业务标识  -->
 <!--事件leftclick：当左侧按钮被单击时触发  -->
 <!--事件rightclick：当右侧按钮被点击时触发  -->
-<view class='container' style="background-image:url({{bgsrc}});min-height:{{height}};">
+<view class='container {{mark}}' style="background-image:url({{bgsrc}});min-height:{{height}};">
+
   <view class='left-btn btn' bindtap='lefttap'>
-    <button>{{lefttext}}</button>
+   <button><text class='iconfont icon-list-1-copy'></text> {{lefttext}}</button>
   </view>
   <view class='main' style='width:{{imgW}};height:{{imgh}}'>
     <imgBox src='{{imgsrc}}' preview='{{false}}'></imgBox>
   </view>
   <view class='right-btn btn' bindtap='righttap'>
-    <button>{{righttext}}</button>
+      <button open-type='share'><text class='iconfont icon-fenxiang'></text> {{righttext}}</button>
   </view>
 </view>

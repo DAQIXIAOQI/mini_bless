@@ -46,10 +46,10 @@ Component({
           method:this.data.type,
           data:this.data.data,
           success(e){
-              console.log(e);
               that.triggerEvent('ajaxback',{result:e});
           },
           fail(e){
+            console.log(e);
             that.triggerEvent('ajaxback', { result: e });
             wx.showToast({
               title: '请求失败，请稍后再试~！',

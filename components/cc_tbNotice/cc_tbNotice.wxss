@@ -13,6 +13,7 @@
   z-index: 2;
   font-size: 28rpx;
   text-align: center;
+  border-bottom:1px solid #e0e0e0;
 }
 .content .main {
   width: 100%;

@@ -8,6 +8,7 @@
   position: relative;
   padding:  20rpx 0 ;
   background-color: white;
+  border-bottom: 1px solid #e0e0e0;
 }
 .bless-box .main {
   width: 100%;
@@ -40,10 +41,17 @@
   line-height: 100rpx;
   padding: 0 30rpx 0 20rpx;
 }
-.items:last-child {
-  border-bottom-width:  0rpx;
+.items .left .icon-zhuantiliulan,.items .left .icon-liuyan1 {
+  color:#4080bd;
 }
-.items .right {float:right;height: 98rpx;line-height: 98rpx;}
+.items .left .icon-dianzan {
+  color:#f67f7f;
+}
+.items .left .icon-jiangbei {
+  color:#dec937;
+}
+
+.items .right {float:right;height: 98rpx;line-height: 98rpx;color:#f15646;}
 .items .right text {
   margin-left:25rpx;
 }
@@ -56,6 +64,7 @@
     margin: 15rpx 0; 
     float: left;
     color:#9d9d9d;
+    font-size: 40rpx;
 }
 .items .main {
   display: inline-block;
@@ -66,14 +75,7 @@
   padding: 0 30rpx 30rpx 30rpx;
 }
 .btn-box .btn{
-   background-color: #f67f7f;
-   color: white;
-   display: inline-block;
-   width: 150rpx;
-   height: 60rpx;
-   line-height: 60rpx;
-   text-align: center;
-   border-radius: 99rpx;
+  width: 180rpx;
    margin-right: 50rpx;
    font-size: 30rpx;
 }
@@ -84,7 +86,23 @@
 .btn-box .send-box .btn {
   margin-right: 0;
 }
+.btn-box .iconfont {
+  font-size: 35rpx;
+  float: left;
+  }
 
+.edit-box {
+  position: relative;
+  overflow: hidden;
+}
+.btn-box .btn1 {
+  margin-right: 50rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: left;
+  color:#f67f7f;
+
+}
 
 
 

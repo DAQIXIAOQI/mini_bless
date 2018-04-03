@@ -35,6 +35,7 @@
 .cart .img-box{
    border-radius: 10rpx;
    overflow: hidden;
+   border:1px solid #e0e0e0;
 }
 .cart .bt-text {
    height: 60rpx;

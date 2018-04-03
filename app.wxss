@@ -4,3 +4,13 @@
    min-height: 100vh;
   background-color: #f5f5f5;
 }
+
+.btn {
+   background-color: #f67f7f;
+   color: white;
+   display: inline-block;
+   height: 60rpx;
+   line-height: 60rpx;
+   text-align: center;
+   border-radius: 99rpx;
+}

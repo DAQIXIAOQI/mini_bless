@@ -4,7 +4,7 @@
 <!--toggle()：控制list显示与否  -->
 <view class='list-container {{isShow? "show":""}}'>
   <view class='top'>
-    <text bindtap='close'> 《 </text>
+    <text bindtap='close'> 关闭 </text>
     <scroll-view class='tabs' scroll-x>
       <view bindtap='tabClick' class='tabs-item {{item.id == nowList.id ? "hover":""}}' wx:for='{{tabData}}' wx:key='listTab' data-id='{{item.id}}'>{{item.text}}</view>
     </scroll-view>

@@ -5,7 +5,7 @@
   margin: 0 auto;
   height: 60rpx;
   line-height: 60rpx;
-  color:#929292;
+  color:#ffffff;
   background-color: #f67f7f;
   border-radius: 999rpx;
   margin-top: 120rpx;

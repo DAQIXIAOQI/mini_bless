@@ -48,8 +48,9 @@
   min-width: 75%;
 }
 .input-content.unsingle .input-box textarea {
-  height:90%;
-  padding: 2.5% 5%;
+  height:70%;
+padding:5% 5%;
+
 }
 .input-content .input-box icon {
   display: flex;
