@@ -1,4 +1,3 @@
-
 <import src='../../template/template.wxml' />
 <view class='container gray-content'>
   <view class='slide-box box'>
@@ -7,32 +6,34 @@
 
   <view class='bless-box box'>
     <view class='main' style='background-image:url(http://dev.guotu.zsylife.cn/minidata/editBox.png)'>
-      <inlineAbstract  cid='bless sender' imgw="80rpx" class='send-box' text="对对对" imgsrc='http://dev.guotu.zsylife.cn/minidata/index01.png'></inlineAbstract>
+      <inlineAbstract cid='bless sender' imgw="80rpx" class='send-box' text="对对对" imgsrc='http://dev.guotu.zsylife.cn/minidata/index01.png'></inlineAbstract>
       <inlineAbstract wx:if='{{isLogin}}' cid='bless geter' imgw="80rpx" class='rece-box' text="{{userInfo.nickName}}" imgsrc='{{userInfo.avatarUrl}}'></inlineAbstract>
 
-      <scroll-view class='bless' scroll-y> 这是一段祝福祝福这是一段祝福祝福这是一段祝福福祝福 这是一段祝福祝福这是一段祝福祝福这是一段祝福福祝福这是一段祝福祝福这是一段祝福祝福这是一段祝福福祝福这是一段祝福祝福这是一段祝福祝福这是一段祝福福祝福
+      <scroll-view class='bless' scroll-y> 这是一段祝福祝福这是一段祝福祝祝福祝福这是一段祝福祝福这是一段祝福福祝福
       </scroll-view>
 
 
     </view>
 
-  
+
 
   </view>
-  <view class='toggle-box {{ismoving? "move" : ""}}'>
-    <view  hidden='{{isShowComment}}'>
+  <view class='toggle-box {{ismoving? "moves" : ""}}'>
+    <view hidden='{{isShowComment}}'>
       <view class='comment-box'>
         <view class='comment'>
           <view class='text'>
             <text class='iconfont icon-pinglun'>填写留言：</text>
           </view>
           <view class='textarea-box' hidden='{{ismoving}}'>
-            <textarea type='text'></textarea>
+            <!-- <textarea type='text'></textarea> -->
+            <inputBox id='_comment' cid='comment' height='100rpx' placeholder='点击这里输入留言哦' clear="{{false}}" single="{{false}}" bind:input="commentInput" maxlength='40'></inputBox>
           </view>
         </view>
         <view class='comment-options'>
-        <text class='option {{isLike?"liked":""}}' bindtap='toggleLike'><text class='iconfont icon-dianzan '  ></text>点赞</text>
+          <text class='option {{isLike?"liked":""}}' bindtap='toggleLike'><text class='iconfont icon-dianzan '  ></text>点赞</text>
           <text class='option' bindtap='toggleComment'>查看留言<text class='iconfont icon-jiantou'></text></text>
+          <text class='option submit-comment' bindtap='submitComment'>确定</text>
         </view>
       </view>
 
@@ -48,14 +49,14 @@
         </view>
       </view>
     </view>
-    <view class='comment-list-box' hidden='{{!isShowComment}}'> 
-         <text bindtap="toggleComment">返回</text>  
-         <view class='comment-title'>留言345</view> 
-         <view class='comment-item' wx:for='{{commentList}}' wx:key='comment-list'>
-         <template is="commentItem" data="{{item}}">
-         </template>
-         </view>
-         <loadMore id='commentLoad' bind:loadData='loadComment'></loadMore>
+    <view class='comment-list-box' hidden='{{!isShowComment}}'>
+      <text class='comment-back' bindtap="toggleComment">返回</text>
+      <view class='comment-title'>留言345</view>
+      <view class='comment-item' wx:for='{{commentList}}' wx:key='comment-list'>
+        <template is="commentItem" data="{{item}}">
+        </template>
+      </view>
+      <loadMore id='commentLoad' test="{{true}}" num="6" maxl="35" bind:loadData='loadComment'></loadMore>
     </view>
   </view>
 </view>

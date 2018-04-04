@@ -9,7 +9,7 @@ Component({
   },
   data: {
     sid:'A1',
-    itemWidth:59
+    itemWidth:74
   },
   attached(){
     let that = this ;

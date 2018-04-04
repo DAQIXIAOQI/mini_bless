@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/get/get",
+    "pages/index/index",  
+      "pages/get/get",
+    "pages/receive/receive",
     "pages/save/save",
     "pages/personal/personal",
     "pages/rank/rank",  
-    "pages/edit/edit",
-    "pages/receive/receive"
+    "pages/edit/edit"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",

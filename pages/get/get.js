@@ -2,15 +2,12 @@ const app = getApp()
 Page({
   data: {
     imgUrls: ['http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png']  ,
-    commentList:[
-      { name: '大师', time: '3月27日', comment: '的哈就是看的哈就开始大哭的哈空间', avatar: 'http://dev.guotu.zsylife.cn/minidata/index01.png' }, { name: '大师', time: '3月27日', comment: '的哈就是看的哈就开始大哭的哈空间', avatar: 'http://dev.guotu.zsylife.cn/minidata/index01.png' }, { name: '大师', time: '3月27日', comment: '的哈就是看的哈就开始大哭的哈空间', avatar: 'http://dev.guotu.zsylife.cn/minidata/index01.png' }, { name: '大师', time: '3月27日', comment: '的哈就是看的哈就开始大哭的哈空间', avatar: 'http://dev.guotu.zsylife.cn/minidata/index01.png' }, { name: '大师', time: '3月27日', comment: '的哈就是看的哈就开始大哭的哈空间', avatar: 'http://dev.guotu.zsylife.cn/minidata/index01.png' }
-    ],
-    maxl: 25,
-    loadNum: 6,
+    commentList:[],
     isShowComment:false,
     ismoving:false,
     isLike:false,
-    isLogin:false
+    isLogin:false,
+    comment:''
   },
   onLoad: function (options) {
     let that = this;
@@ -23,29 +20,16 @@ Page({
   },
 
   onReady: function () {
-   
-  
     this.commentLoad = this.selectComponent("#commentLoad");
+    this.commentBox = this.selectComponent("#_comment");
+    this.commentLoad.loading();
   },
-  loadComment() {
-    let that = this;
+  loadComment(e) {
     let arr = this.data.commentList;
-    for (let i = 0; i < that.data.loadNum; i++) {
-      if (arr.length > that.data.maxl) {
-        that.commentLoad.loadAll();
-        break
-      }
-      arr.push({
-        imgsrc: 'http://dev.guotu.zsylife.cn/minidata/index02.png',
-        name: '是打开了大',
-        time: '3月20日',
-        comment:"电视剧啊圣诞节了极大见识到了空间啊大家里看到"
-      });
-    }
-    that.setData({
-      commentList: arr
+    arr = arr.concat(e.detail.result);
+    this.setData({
+      commentList:arr
     });
-    that.commentLoad.loaded();
   },
   toggleComment(){
     let that = this ;
@@ -68,11 +52,45 @@ Page({
     this.setData({
       isLike:!that.data.isLike
     });
-    console.log(this.data.isLike);
   },
   toPage(){
      wx.switchTab({
        url: '/pages/index/index',
      })
+  },
+  submitComment(){
+    let that = this ;
+    let comment = {
+      avatar:this.data.userInfo.avatarUrl,
+      name: this.data.userInfo.nickName,
+      time: (new Date().getMonth()) + 1 + '月' + (new Date().getDate()) + '日',
+      comment:this.data.comment
+    }
+    if(this.data.comment == ''){
+      wx.showToast({
+        title: '不能提交空值',
+        icon:'none'
+      });
+      return
+    }
+    let arr = this.data.commentList;
+    arr.unshift(comment);
+    this.setData({ commentList:arr,comment:''});
+    this.commentBox.clear();
+    wx.showModal({
+      title: '恭喜',
+      content: '提交成功！去查看留言？',
+      cancelText:'不了',
+      confirmText:'好的',
+      success(){
+        that.toggleComment();
+      }
+    });
+
+  },
+  commentInput(e){
+     this.setData({
+       comment : e.detail.value
+     });
   }
 })

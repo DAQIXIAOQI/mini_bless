@@ -95,3 +95,13 @@ padding:5% 5%;
    color:#929292;
    font-size: 30rpx;  
 }
+
+.comment.input-container {
+  background-color: transparent;
+}
+.comment .input-content.unsingle .input-box textarea {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 33rpx
+}

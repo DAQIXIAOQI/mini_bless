@@ -3,6 +3,7 @@
     "imgBox": "/components/cc_imgBox/cc_imgBox",
     "slide": "/components/cc_slideA/cc_slideA",
     "inlineAbstract": "/components/cc_inlineAbstract/cc_inlineAbstract",
-    "loadMore": "/components/cc_loadMore/cc_loadMore"
+    "loadMore": "/components/cc_loadMore/cc_loadMore",
+    "inputBox": "/components/cc_inputBox/cc_inputBox"
   }
 }

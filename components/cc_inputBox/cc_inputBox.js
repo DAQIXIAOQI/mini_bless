@@ -45,6 +45,10 @@ Component({
     clear:{
       type:Boolean,
       value:true
+    },
+    cid:{
+      type:String,
+      value:""
     }
   },
   data: {
@@ -66,6 +70,7 @@ Component({
         })
         value = value.slice(0,that.data.maxlength);
       }
+      if(this.data.setglobal){
       if (app.globalData[this.data.setglobal] && app.globalData[this.data.setglobal][this.data.setglobal]) {
         app.globalData[this.data.setglobal][this.data.name].value = value;
       }
@@ -77,7 +82,9 @@ Component({
         obj.value = value;
         app.globalData[this.data.setglobal][this.data.name] = obj;  
       }
-      this.setData({"value":value})
+      }
+      this.setData({"value":value});
+      this.triggerEvent('input',{'value':value});
     },
     clear() {
       this.setData({

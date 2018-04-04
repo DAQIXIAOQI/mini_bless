@@ -4,6 +4,6 @@
  <cartA cid="{{options.url=='cart' ? 'cart cartb':'cart'}}" title="{{options.url=='cart' ? '标题名称':''}}" width="{{column == 'column3' ?'30.3vw':'44vw'}}" imgh="{{options.url=='cart' ? '1.5':'1'}}" imgsrc="{{item.imgsrc}}" lefttext="{{item.name}}" righttext="{{item.time}}"></cartA>
  </view>
  </view>
- <loadMore id="loadMore" bind:loadData="loadData"></loadMore>
+ <loadMore id="loadMore" test='{{true}}' maxl='15' num='6' bind:loadData="loadData"></loadMore>
 
  </view>

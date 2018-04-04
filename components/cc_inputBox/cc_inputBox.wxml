@@ -10,9 +10,11 @@
 <!--height:输入框高度-->
 <!--single:单行/多行，单行使用input框，多行使用textarea框  -->
 <!--clear：是否显示清除输入按钮，默认为true  -->
+<!--cid：业务标识  -->
+<!--事件input:每次键入值都会回调  -->
 <!--输入的数据会自动存入globalData[setglobal][name]里-->
 <!--结束-->
-<view class='input-container {{name}} ' style='height:{{height == "" ? "60rpx" : height}}'>
+<view class='input-container {{name}} {{cid}} ' style='height:{{height == "" ? "60rpx" : height}}'>
   <view class='input-content {{!clear ? "noclear" :""}}' wx:if="{{single}}">
     <text class='name' wx:if='{{cname!=""}}'>{{cname}}:</text>
     <view class='input-box {{cname == "" ? "full":""}}'>

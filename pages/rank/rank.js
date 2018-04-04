@@ -31,29 +31,14 @@ Page({
   },
   onReady: function () {    
      this.loadMore = this.selectComponent("#loadMore");
-     this.loadData();
+     this.loadMore.loading();
   },
-  loadData(){
-      let that = this ;
+  loadData(e){
       let arr = this.data.listData;
-      let rank = arr.length ;
-      for (let i = 0; i < that.data.loadNum; i++) {
-        if (arr.length > that.data.maxl) {
-          this.loadMore.loadAll();
-          break
-        }
-        arr.push({
-          avatar: 'http://dev.guotu.zsylife.cn/minidata/index02.png',
-          name: '大家阿卡~!',
-          num: that.data.maxl-rank-i,
-          rank:rank + i
-        });
-      }
-      this.loadMore.loaded();
-      that.setData({
-        listData: arr
-      });
-    
+      arr = arr.concat(e.detail.result);
+      this.setData({
+        listData:arr
+      });   
   },
   r(){
     wx.showShareMenu({

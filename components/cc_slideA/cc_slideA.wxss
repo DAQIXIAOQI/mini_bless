@@ -1,13 +1,13 @@
 .container {
-  height: 40vw;
+  height: 50vw;
 }
 .container .list-box {
-  height: 40vw;
+  height: 50vw;
   position: absolute;
   overflow: hidden;
 }
 .container .list-box .img-box {
-  width: 55vw;
+  width: 70vw;
   height: 100%;
   float: left;
   margin: 0 2vw;

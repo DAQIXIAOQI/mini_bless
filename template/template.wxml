@@ -3,7 +3,7 @@
   <view class='rankItem items'>
     <view class='left'>
       <imgBox wx:if="{{item.rank < 3}}" src='http://dev.guotu.zsylife.cn/minidata/ward{{item.rank+1}}.png'></imgBox>
-      <text wx:if="{{item.rank>=3}}">{{item.rank}}</text>
+      <text wx:if="{{item.rank>=3}}">{{item.rank+1}}</text>
     </view>
     <view class='main'>
       <view class='img-box'>

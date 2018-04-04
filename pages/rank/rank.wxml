@@ -10,7 +10,7 @@
           <template is='rankItem' data="{{item}}"></template>  
         </view>
          <view class='item'>
-           <loadMore id='loadMore' bind:loadData='loadData'></loadMore>
+           <loadMore test="{{true}}" id='loadMore' bind:loadData='loadData'></loadMore>
          </view>
          </scroll-view>
         
