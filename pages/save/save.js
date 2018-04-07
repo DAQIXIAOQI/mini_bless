@@ -4,7 +4,6 @@ Page({
     imgUrls: ['http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png']  
   },
   onLoad: function (options) {
-     console.log(options,app.globalData);
      this.setData({
        blessData:app.globalData.bless,
        userInfo: app.globalData.userInfo
@@ -12,7 +11,7 @@ Page({
 
   },
   onReady: function () {
-  
+    this.slide = this.selectComponent("#slide");
   },
   toEdit(e){
      wx.navigateBack({
@@ -39,10 +38,11 @@ Page({
       title: '我给你写了一段祝福',
       path: '/pages/get/get',
       success: function (res) {
-        wx.showToast({
-          title: '祝贺你，分享成功',
-          icon:'success'
-        })
+       wx.showModal({
+         title: '恭喜',
+         content: '分享成功',
+         showCancel:false
+       })
       },
       fail: function (res) {
         // 转发失败

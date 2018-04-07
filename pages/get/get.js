@@ -23,7 +23,9 @@ Page({
     this.commentLoad = this.selectComponent("#commentLoad");
     this.commentBox = this.selectComponent("#_comment");
     this.commentLoad.loading();
+    this.slide = this.selectComponent("#slide");
   },
+  
   loadComment(e) {
     let arr = this.data.commentList;
     arr = arr.concat(e.detail.result);

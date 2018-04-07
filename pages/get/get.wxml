@@ -1,7 +1,7 @@
 <import src='../../template/template.wxml' />
 <view class='container gray-content'>
   <view class='slide-box box'>
-    <slide imgurl='{{imgUrls}}'></slide>
+    <slide id='slide' imgurl='{{imgUrls}}'></slide>
   </view>
 
   <view class='bless-box box'>

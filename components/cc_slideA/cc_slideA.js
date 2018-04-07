@@ -11,7 +11,7 @@ Component({
     sid:'A1',
     itemWidth:74
   },
-  attached(){
+  ready(){
     let that = this ;
     this.setData({
        width:this.data.imgurl.length*this.data.itemWidth + 'vw'
@@ -45,6 +45,9 @@ Component({
       });   
     }
     this.interval();
+  },
+  detached(){
+    this.stop();
   }
   ,
   methods: {
@@ -56,7 +59,7 @@ Component({
       }.bind(interval),5000);
     },
     touchstart(e){
-      interval.nowPos = e.currentTarget.dataset.index ;
+      // interval.nowPos = e.currentTarget.dataset.index ;
       clearInterval(interval.timer);
       clearTimeout(interval.timer1);
       interval.timer1 = setTimeout(function(){
@@ -67,7 +70,11 @@ Component({
       this.setData({
         sid: 'A' + e.currentTarget.dataset.index
       })
+    },
+    stop(){
+      clearInterval(interval.timer);
+      clearTimeout(interval.timer1);
     }
-
+    
   }
 })
