@@ -16,20 +16,103 @@ Component({
             type:String,
             value:""
           },
-          color: { type: String, value: "#ffffff" }, bgcolor: { type: String, value: "#000000" }
+          color: { type: String, value: "#ffffff" }, 
+          bgcolor: { type: String, value: "#000000" },
+          automove:{type:Boolean,value:true}
   },
-
-  /**
-   * 组件的初始数据
-   */
+  ready(){
+    let that = this ;
+    if(this.data.automove){
+    let b = new Promise(function(resolve,reject){
+      let textW , scrollW ;
+      let query = wx.createSelectorQuery().in(that)
+      query.select('#text').boundingClientRect(function (res) { 
+          textW=res.width; 
+      }).exec();
+      let query1 = wx.createSelectorQuery().in(that)
+      query1.select('#scroll-box').boundingClientRect(function (res) {
+          scrollW=res.width;
+          resolve([textW, scrollW]);
+      }).exec();
+    });
+    b.then(function(e){
+      if(e[0]<e[1]){
+        return
+      }
+      else{
+        that.setData({
+          dvalue:parseInt(e[0]- e[1])+20
+        },that.move);
+      }         
+    });
+    }
+  }
+  ,
   data: {
-
+    timerInterval:"",
+    timerTimeout:"",
+    moveD:{
+      ratio:0,
+      dir:true
+    }
   },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
-
+    move(){
+      if(!this.data.automove) return 
+      let that = this ;
+      this.stop();
+      this.data.timerInterval = setInterval(function(){
+        that.cul();
+      },30);
+    },
+    cul(){
+      let moveD = this.data.moveD;
+      let dvalue = this.data.dvalue;
+      if(moveD.dir){
+        if(moveD.ratio >= dvalue){
+          this.setData({
+             moveD:{
+              "ratio":dvalue,
+              "dir":false
+             }
+          });
+          return
+        }
+        this.setData({
+          moveD: {
+            "ratio": moveD.ratio+1,
+            "dir":true
+          }
+         });
+      }else{
+        if (moveD.ratio <= -20) {
+          this.setData({
+            moveD: {
+              "ratio": -20,
+              "dir": true
+            }
+          });
+          return
+        }
+        this.setData({
+          moveD: {
+            "ratio": moveD.ratio - 1,
+            "dir": false
+          }
+        });
+      }
+    }
+    ,
+    stop(){
+      if (!this.data.automove) return 
+      clearTimeout(this.data.timerTimeout);
+      clearInterval(this.data.timerInterval);
+      this.setData({
+        moveD: {
+          ratio: 0,
+          dir: true
+        }
+      });
+    }
   }
 })

@@ -1,5 +1,14 @@
+<!--position:字符串，可选值为值'top'/'bottom'，规定提示栏位于顶部或底部-->
+<!--text:字符串，需要提示的文字  -->
+<!--iconPath：字符串，图标，暂未实装  -->
+<!--color:字符串，文字颜色  -->
+<!--bgcolor:字符串，背景颜色 -->
+<!--automove:波尔值，当一行不够显示时，是否自动滚动  -->
 <view  class='content {{position}} ' style='background:{{bgcolor}}'>
-    
+    <scroll-view id='scroll-box' scroll-x bindtouchstart='stop' bindtouchend='move' >
     <!-- <text class='iconfont {{iconPath}}'></text> -->
-    <view class='main' style="color:{{color}}">{{text}}</view>
+    <view class='main-box' style='left:{{-moveD.ratio + "rpx"}}'>
+    <view class='main' id='text' style="color:{{color}};">{{text}}</view></view>
+    </scroll-view>
 </view>
+
