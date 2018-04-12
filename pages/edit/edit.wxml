@@ -30,7 +30,7 @@
    </view>
 
    <view><btnToAjax cid='editSave' text="保存" url="102313" type="POST" globalval="bless" bind:ajaxback='save'></btnToAjax></view>
-   <fulllist class='fixedBox' bind:receive='changeBlessWord' bind:close='toggleTextarea' id='blessList'></fulllist>
+   <fulllist class='fixedBox' tabShow="{{false}}" bind:receive='changeBlessWord' bind:close='toggleTextarea' id='blessList'></fulllist>
    <redPacket id="redPacket" bind:close='toggleTextarea' bind:submit='giftSet' class='fixedBox' title='发红包'></redPacket>
    <redPacket id="cartPacket" bind:close='toggleTextarea'  bind:submit='giftSet' class='fixedBox' _type='cartPacket' title='发卡券'></redPacket>
 </view>

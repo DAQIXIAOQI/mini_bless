@@ -84,8 +84,10 @@ Page({
       content: '提交成功！去查看留言？',
       cancelText:'不了',
       confirmText:'好的',
-      success(){
+      success(res){
+        if(res.confirm){
         that.toggleComment();
+        }
       }
     });
 

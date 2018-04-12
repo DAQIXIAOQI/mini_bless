@@ -25,7 +25,7 @@
 .content .main-box {
   position: relative;
 }
-scroll-view {
+.scroll-box {
   position: relative;
   width: 94%;
   margin: 0 3%;

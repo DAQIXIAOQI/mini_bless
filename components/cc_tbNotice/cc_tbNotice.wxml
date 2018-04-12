@@ -5,7 +5,7 @@
 <!--bgcolor:字符串，背景颜色 -->
 <!--automove:波尔值，当一行不够显示时，是否自动滚动  -->
 <view  class='content {{position}} ' style='background:{{bgcolor}}'>
-    <scroll-view id='scroll-box' scroll-x bindtouchstart='stop' bindtouchend='move' >
+    <scroll-view class='scroll-box' id='scroll-box' scroll-x bindtouchstart='stop' bindtouchend='move' >
     <!-- <text class='iconfont {{iconPath}}'></text> -->
     <view class='main-box' style='left:{{-moveD.ratio + "rpx"}}'>
     <view class='main' id='text' style="color:{{color}};">{{text}}</view></view>

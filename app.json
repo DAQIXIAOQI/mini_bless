@@ -1,12 +1,16 @@
 {
   "pages": [
-    "pages/index/index",  
-      "pages/get/get",
-    "pages/receive/receive",
+    "pages/index/index",
+    
     "pages/save/save",
+    "pages/edit/edit",
+    
+    "pages/get/get",
+    "pages/receive/receive",
+   
     "pages/personal/personal",
-    "pages/rank/rank",  
-    "pages/edit/edit"
+    "pages/rank/rank"
+   
    
   ],
   "window": {

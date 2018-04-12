@@ -58,7 +58,7 @@ Component({
   },
   methods: {
     move(){
-      if(!this.data.automove) return 
+      if(!this.data.automove||!this.data.dvalue) return 
       let that = this ;
       this.stop();
       this.data.timerInterval = setInterval(function(){
@@ -104,7 +104,7 @@ Component({
     }
     ,
     stop(){
-      if (!this.data.automove) return 
+      if (!this.data.automove || !this.data.dvalue) return 
       clearTimeout(this.data.timerTimeout);
       clearInterval(this.data.timerInterval);
       this.setData({

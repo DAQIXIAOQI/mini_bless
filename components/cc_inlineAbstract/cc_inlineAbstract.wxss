@@ -28,6 +28,8 @@
   display: inline-block;
 }
 
+
+
 .container.bless .text {
  color:#f59165;
  font-size: 30rpx;
@@ -39,6 +41,13 @@
 .container.sender .img-box {
   float: left;
 }
+
+.container.sender .text,.container.geter .text {
+  float:right;
+  clear:both;
+
+}
+
 .container.geter {
   margin:0 30rpx 50rpx 0; 
 }
