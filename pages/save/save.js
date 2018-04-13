@@ -1,7 +1,8 @@
 const app = getApp()
 Page({
   data: {
-    imgUrls: ['http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png']  
+    imgUrls: ['http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png', 'http://dev.guotu.zsylife.cn/minidata/index01.png'],
+    luckyDraw: false  
   },
   onLoad: function (options) {
      this.setData({
@@ -34,15 +35,24 @@ Page({
     
   },
   onShareAppMessage: function (res) {
+    const that =  this;
+    
     return {
       title: '我给你写了一段祝福',
       path: '/pages/get/get',
       success: function (res) {
-       wx.showModal({
-         title: '恭喜',
-         content: '分享成功',
-         showCancel:false
-       })
+      //  wx.showModal({
+      //    title: '恭喜',
+      //    content: '分享成功,',
+      //    showCancel:false
+      //  })
+        that.setData({
+          luckyDraw: true
+        },function(){
+          const luckyDraw = that.selectComponent("#luckyDraw"); 
+          luckyDraw.toggle();
+        });
+        
       },
       fail: function (res) {
         // 转发失败

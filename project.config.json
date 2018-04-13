@@ -26,8 +26,15 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "save",
+					"pathName": "pages/save/save",
+					"query": ""
+				}
+			]
 		}
 	}
 }

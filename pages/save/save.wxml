@@ -2,22 +2,14 @@
   <view class='slide-box box'>
     <slide id='slide' imgurl='{{imgUrls}}'></slide>
   </view>
-
   <view class='bless-box box'>
     <view  class='main'style='background-image:url(http://dev.guotu.zsylife.cn/minidata/editBox.png)'>
       <inlineAbstract cid='bless sender' imgw="80rpx"  class='send-box'  text="{{blessData.my_name.value}}" imgsrc='{{blessData.my_avatar.value}}'></inlineAbstract>
-        <inlineAbstract cid='bless geter' imgw="80rpx" class='rece-box' text="{{blessData.his_name.value}}" imgsrc='{{app.globalData.userInfo.avatarurl}}'></inlineAbstract>
-         
+        <inlineAbstract cid='bless geter' imgw="80rpx" class='rece-box' text="{{blessData.his_name.value}}" imgsrc='{{app.globalData.userInfo.avatarurl}}'></inlineAbstract>         
             <scroll-view class='bless' scroll-y> {{blessData.bless_word.value}}</scroll-view>
-           
-     
-    </view>
-     
-
-    
+  
+    </view>  
   </view>
-
-
   <view class='option-box box'>
     <view class=' items'>
       <view class='left'>
@@ -56,7 +48,6 @@
       <view class='right'>5<text class='iconfont icon-fenxiang-tianchong'></text></view>
     </view>
   </view>
-
   <view class='btn-box'>
         <view class='edit-box'>
            <view class='btn1' bindtap='toEdit'><text class='iconfont icon-arrow-left'></text>返回</view>
@@ -67,4 +58,5 @@
           <button open-type='share' class='btn'><text class='iconfont icon-send'></text>发送</button>
         </view>     
   </view>
+  <luckyDraw wx:if='{{luckyDraw}}' id = 'luckyDraw'  bind:close='close'></luckyDraw>
 </view>

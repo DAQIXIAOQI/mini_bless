@@ -1,0 +1,19 @@
+<view class='pop-box {{isShow?"show":""}}'>
+  <view bindtouchstart='close' class='mask '>
+  </view>
+  <view class='main-box ' catchtouchmove='stopScroll'>
+    <view class='main-title'>
+      <view>
+        恭喜您
+      </view>
+      获得了一次抽奖机会~！请点击下面卡片进行抽奖。
+    </view>
+    <view class='main-card {{moveOut ?"move-out":""}} {{moveIn ?"move-in":""}}' bindtap='watch'>
+      <view class='card-nw card {{isWatch?"":"show"}}'></view>
+      <view class='card-iw card {{isWatch?"show":""}}'>暂未中奖,祝你身体健康</view>
+    </view>
+    <view class='main-btn'>
+      <button class='furl'>收下</button>
+    </view>
+  </view>
+</view>
