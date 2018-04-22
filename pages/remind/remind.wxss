@@ -1,0 +1,11 @@
+@import "../../template/template.wxss";
+
+.gray-content {
+  min-height: 98vh;
+  padding: 1vh 0 ;
+}
+
+.remind-item {
+  width: 94vw;
+  margin: 2vh 3vw; 
+}

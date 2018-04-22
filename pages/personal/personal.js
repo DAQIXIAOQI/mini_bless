@@ -34,6 +34,10 @@ Page({
     wx.navigateTo({
       url: '../receive/receive?column=' + data.column + "&name=" + data.name + "&url=" + data.url
     });
-
+  },
+  toRemind(e) {
+    wx.navigateTo({
+      url: '../remind/remind'
+    });
   }
 })

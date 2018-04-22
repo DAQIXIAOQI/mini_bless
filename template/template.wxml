@@ -16,14 +16,34 @@
 </template>
 
 <template name='commentItem'>
-  <view class='commentItem'>
-    <view class='comment-user'>
+  <view class='cartItem'>
+    <view class='cart-user'>
       <image src='{{item.avatar}}'></image>
-      <view class='comment-info'>
-        <text class='comment-user-name'>{{item.name}}</text>
-        <text class='comment-user-time'>{{item.time}}</text>
-        <view class='comment-main'> {{item.comment}}</view>
+      <view class='cart-info'>
+        <text class='cart-user-name'>{{item.name}}</text>
+        <text class='cart-user-time'>{{item.time}}</text>
+        <view class='cart-main'> {{item.comment}}</view>
       </view>
     </view>
   </view>
 </template>
+
+<template name='remindItem'>
+  <view class='remind'>
+    <view class='cartItem'>
+      <view class='cart-user'>
+        <image src='{{item.avatar}}'></image>
+        <view class='cart-info'>
+          <text class='cart-user-name'>{{item.name}}</text>
+          <text class='cart-user-time'>{{item.time}}</text>
+          <view class='cart-main like'  wx:if ='{{!item.comment}}'> {{item.name}}<text class='gray'>赞了你的祝福</text></view>
+          <view class='cart-main' wx:if ='{{item.comment}}'> {{item.comment}}</view>
+          <view class='cart-bless'>
+            <text class='gray'>{{item.type == 'comment' ? '评论' : '点赞'}}我的祝福:</text>{{item.resource}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+

@@ -1,17 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    
     "pages/save/save",
     "pages/edit/edit",
-    
     "pages/get/get",
     "pages/receive/receive",
-   
     "pages/personal/personal",
-    "pages/rank/rank"
-   
-   
+    "pages/rank/rank",
+    "pages/remind/remind"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,8 +20,8 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath":"images/index01.png",
-       "selectedIconPath":"images/index011.png"
+        "iconPath": "images/index01.png",
+        "selectedIconPath": "images/index011.png"
       },
       {
         "pagePath": "pages/rank/rank",

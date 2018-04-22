@@ -35,13 +35,13 @@
 }
 
 /*-------commentItem css------------*/
-.commentItem {
+.cartItem {
    position: relative;
    overflow: hidden;
    padding: 20rpx;
    background-color: white;
 }
-.commentItem .comment-user image {
+.cartItem .cart-user image {
   display: inline-block;
   width: 80rpx;
   height: 80rpx;
@@ -49,19 +49,40 @@
   border-radius: 100rpx;
   box-shadow: 0 0 1rpx #929292;
 }
-.commentItem .comment-user .comment-info {
+.cartItem .cart-user .cart-info {
   margin-left: 110rpx;
   line-height: 60rpx;
 }
-.commentItem .comment-user .comment-user-time {
+.cartItem .cart-user .cart-user-time {
   color:#929292;
   font-size: 30rpx;
   display: inline-block;
   margin:  0 15rpx;
 }
-.commentItem .comment-user .comment-main {
+.cartItem .cart-user .cart-main {
   font-size: 35rpx;
   line-height: 45rpx;
+}
+
+.remind .cartItem {
+  border-radius: 5rpx; 
+}
+
+.remind .cart-user .cart-main {
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+.remind .cart-bless {
+  background-color: rgb(240,240,244);
+  padding:10rpx  20rpx;
+  font-size: 30rpx;
+}
+
+
+.gray {
+  color: rgb(110,110,110);
+  display: inline-block;
+  margin: 0 10rpx;
 }
 
 

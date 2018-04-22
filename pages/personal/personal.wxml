@@ -15,7 +15,7 @@
    </view>
      
   <view class='user-notice list'>
-      <view class='item'><text class=' left iconfont icon-tixing'></text> <text class='main'>提醒</text> <text class='iconfont icon-fenxiang-tianchong right '></text></view>
+      <view class='item' bindtap='toRemind' data-name="我收到的赞和评论" data-url="remind" ><text class=' left iconfont icon-tixing'></text> <text class='main'>提醒</text> <text class='iconfont icon-fenxiang-tianchong right '></text></view>
 
   </view>
   <view class='user-bless list'>
