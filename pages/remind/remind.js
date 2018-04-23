@@ -1,4 +1,4 @@
-// pages/remind/remind.js
+const app = getApp();
 Page({
 
   /**
@@ -12,7 +12,7 @@ Page({
         name:"小明",
         time:"4月17日",
         comment:"谢谢你的祝福！",
-        resource:"祝你们身体健康~！"
+        resource:"祝你们身体健康~！祝你们身体健康~！祝你们身体健康~！祝你们身体健康~！祝你们身体健康~！"
       },
       {
         'type': 'like',
@@ -36,10 +36,25 @@ Page({
         time: "4月17日",
         resource: "祝你们身体健康~！"
       },
-    ]
+    ],
+    page:1
   },
   onLoad: function (options) {
-  
+    const that = this;
+    const $data = Object.assign(app.globalData.ajaxPublic,{p:this.data.page});
+    wx.request({
+      url: app.globalData.baseServer + '/index.php/api/bless/notice_list',
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      dataType: 'json',
+      data: app.globalData.ajaxPublic,
+      success(res) {
+        that.setData({remindList: res.data.data});
+      },
+      fail(res) {
+        console.log(res);
+      }
+    }); 
   },
 
   /**

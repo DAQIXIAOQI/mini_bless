@@ -65,4 +65,15 @@ display: inline-block;
 .list .item .iconfont.icon-tixing,.list .item .iconfont.icon-qiaquan {
   color: #40bc4e;
 }
-   
+
+.item.remind .right{
+  background-color: rgb(241,86,70);
+  color:white;
+  display: inline-block;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  width: 50rpx;
+  margin: 25rpx 0;
+  border-radius: 99rpx;
+} 

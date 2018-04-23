@@ -15,16 +15,23 @@
   margin: 35rpx ;
   float: right;
   background: #f67f7f;
-  width: 35%;
+  width: 28%;
+  padding: 0 30rpx;
   text-align: center;
   height: 60rpx;
   line-height: 60rpx;
   color: white;
   border-radius: 99rpx;
 }
+.select-bless .box text{
+  float: left;
+}
 .select-bless .box .iconfont {
 font-size:40rpx;
-margin-left:10rpx;
+float: left;
+margin-left: 10rpx;
+position: relative;
+top: -5rpx;
 }
 
 .list.option .item {

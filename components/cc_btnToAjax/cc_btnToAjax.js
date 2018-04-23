@@ -39,17 +39,18 @@ Component({
   ,
   methods: {
    click(){
+     
       let that = this ;
       if(this.checkNull()){
         wx.request({
-          url: this.data.url,
+          url: app.globalData.baseServer + this.data.url,
           method:this.data.type,
+          header: { 'content-type': 'application/x-www-form-urlencoded' },
           data:this.data.data,
           success(e){
               that.triggerEvent('ajaxback',{result:e});
           },
           fail(e){
-            console.log(e);
             that.triggerEvent('ajaxback', { result: e });
             wx.showToast({
               title: '请求失败，请稍后再试~！',
@@ -62,7 +63,6 @@ Component({
    checkNull(){
      let globalData = app.globalData[this.data.globalval];
       for(let name in globalData){
-          console.log(globalData[name]);
           if(globalData[name].value == ''){
                wx.showToast({
                  title: globalData[name].cname+'必填',
@@ -71,7 +71,6 @@ Component({
                return false
           }
           else{
-            console.log(this.data.data);
             this.data.data[globalData[name].name] = globalData[name].value;
           }
       }

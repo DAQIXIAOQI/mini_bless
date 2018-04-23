@@ -1,44 +1,26 @@
-// pages/rank/rank.js
+const app = getApp();
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
      listData:[],
-     loadAll:false,
-     isLoading:false,
-     maxl:100,
-     loadNum:6
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-
       title: "获赞排行榜"
-
     });
     wx.setNavigationBarColor({
-
       frontColor: '#ffffff',
-
       backgroundColor: '#f0695b'
-
     });
   },
-  onReady: function () {    
-     this.loadMore = this.selectComponent("#loadMore");
-     this.loadMore.loading();
-  },
-  loadData(e){
-      let arr = this.data.listData;
-      arr = arr.concat(e.detail.result);
-      this.setData({
-        listData:arr
-      });   
+  onReady: function () {   
+    if(!app.globalData.userInfo){
+      app.login(this.getRank);
+    }
+    else{
+      this.getRank();
+    }
   },
   r(){
     wx.showShareMenu({
@@ -52,6 +34,26 @@ Page({
        showCancel:false,
        confirmText:'知道了'
      })
+  },
+  getRank(){
+    const that = this ;
+    wx.request({
+      url: app.globalData.baseServer + '/index.php/api/bless/blessings_rank',
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      dataType: 'json',
+      data: app.globalData.ajaxPublic,
+      success(res) {
+        console.log(res);
+        that.setData({
+          listData: res.data.data.ranks,
+          my_rank: res.data.data.my_rank || 'no get',
+        });
+        
+      },
+      fail(res) {
+        console.log(res);
+      }
+    }) 
   }
-  
 })

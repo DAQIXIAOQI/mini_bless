@@ -7,11 +7,11 @@
     </view>
     <view class='main'>
       <view class='img-box'>
-        <image src='{{item.avatar}}'></image>
+        <image src='{{item.avatarurl}}'></image>
       </view>
-      <text>{{item.name}}</text>
+      <text>{{item.nickname}}</text>
     </view>
-    <text class='right'>{{item.num}}<text class='iconfont icon-dianzan'></text></text>
+    <text class='right'>{{item.bepraised}}<text class='iconfont icon-dianzan'></text></text>
   </view>
 </template>
 
@@ -20,9 +20,9 @@
     <view class='cart-user'>
       <image src='{{item.avatar}}'></image>
       <view class='cart-info'>
-        <text class='cart-user-name'>{{item.name}}</text>
-        <text class='cart-user-time'>{{item.time}}</text>
-        <view class='cart-main'> {{item.comment}}</view>
+        <text class='cart-user-name'>{{item.wid}}</text>
+        <text class='cart-user-time'>{{item.createtime}}</text>
+        <view class='cart-main'> {{item.content}}</view>
       </view>
     </view>
   </view>
@@ -32,14 +32,14 @@
   <view class='remind'>
     <view class='cartItem'>
       <view class='cart-user'>
-        <image src='{{item.avatar}}'></image>
+        <image src='{{item.avatarurl}}'></image>
         <view class='cart-info'>
-          <text class='cart-user-name'>{{item.name}}</text>
-          <text class='cart-user-time'>{{item.time}}</text>
-          <view class='cart-main like'  wx:if ='{{!item.comment}}'> {{item.name}}<text class='gray'>赞了你的祝福</text></view>
-          <view class='cart-main' wx:if ='{{item.comment}}'> {{item.comment}}</view>
+          <text class='cart-user-name'>{{item.nickname}}</text>
+          <text class='cart-user-time'>{{item.createtime}}</text>
+          <view class='cart-main like'  wx:if ='{{item.type == "1"}}'><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text></view>
+          <view class='cart-main' wx:if ='{{item.type == "2"}}'> {{item.ncontent}}</view>
           <view class='cart-bless'>
-            <text class='gray'>{{item.type == 'comment' ? '评论' : '点赞'}}我的祝福:</text>{{item.resource}}
+            <text class='gray'>{{item.type == '2' ? '@我的祝福留言' : '@我的祝福点赞'}}</text>{{item.bcontent}}
           </view>
         </view>
       </view>

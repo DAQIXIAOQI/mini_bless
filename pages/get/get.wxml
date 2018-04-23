@@ -1,15 +1,15 @@
 <import src='../../template/template.wxml' />
 <view class='container gray-content'>
-  <view class='slide-box box'>
-    <slide id='slide' imgurl='{{imgUrls}}'></slide>
+  <view class='slide-box box ' >
+    <slide wx:if = '{{imgUrls}}' id='slide' imgurl='{{imgUrls}}'></slide>
   </view>
 
   <view class='bless-box box'>
     <view class='main' style='background-image:url(http://dev.guotu.zsylife.cn/minidata/editBox.png)'>
-      <inlineAbstract cid='bless sender' imgw="80rpx" class='send-box' text="对对对" imgsrc='http://dev.guotu.zsylife.cn/minidata/index01.png'></inlineAbstract>
-      <inlineAbstract wx:if='{{isLogin}}' cid='bless geter' imgw="80rpx" class='rece-box' text="{{userInfo.nickName}}" imgsrc='{{userInfo.avatarUrl}}'></inlineAbstract>
+      <inlineAbstract cid='bless sender' imgw="80rpx" class='send-box' text="{{bless.nickname}}" imgsrc='{{bless.avatarurl}}'></inlineAbstract>
+      <inlineAbstract wx:if='{{isLogin}}' cid='bless geter' imgw="80rpx" class='rece-box' text="{{userInfo.nickname}}" imgsrc='{{userInfo.avatarurl}}'></inlineAbstract>
 
-      <scroll-view class='bless' scroll-y> 这是一段祝福祝福这是一段祝福祝祝福祝福这是一段祝福祝福这是一段祝福福祝福
+      <scroll-view class='bless' scroll-y> {{bless.content}}
       </scroll-view>
 
 
@@ -31,7 +31,7 @@
           </view>
         </view>
         <view class='comment-options'>
-          <text class='option {{isLike?"liked":""}}' bindtap='toggleLike'><text class='iconfont icon-dianzan '  ></text>点赞</text>
+          <text class='option {{isLike?"liked":""}}' bindtap='toggleLike'><text class='iconfont icon-dianzan '  ></text>{{isLike? '已点赞':'点赞'}}</text>
           <text class='option' bindtap='toggleComment'>查看留言<text class='iconfont icon-jiantou'></text></text>
           <text class='option submit-comment' bindtap='submitComment'>确定</text>
         </view>
@@ -56,7 +56,7 @@
         <template is="commentItem" data="{{item}}">
         </template>
       </view>
-      <loadMore id='commentLoad' test="{{true}}" num="6" maxl="35" bind:loadData='loadComment'></loadMore>
+      <loadMore wx:if='{{bdata}}' id='commentLoad' method='POST' data='{{bdata}}' url='/index.php/api/bless/blessings_comment_list' bind:loadData='loadComment'></loadMore>
     </view>
   </view>
 </view>

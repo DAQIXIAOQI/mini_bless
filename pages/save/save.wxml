@@ -4,9 +4,9 @@
   </view>
   <view class='bless-box box'>
     <view  class='main'style='background-image:url(http://dev.guotu.zsylife.cn/minidata/editBox.png)'>
-      <inlineAbstract cid='bless sender' imgw="80rpx"  class='send-box'  text="{{blessData.my_name.value}}" imgsrc='{{blessData.my_avatar.value}}'></inlineAbstract>
-        <inlineAbstract cid='bless geter' imgw="80rpx" class='rece-box' text="{{blessData.his_name.value}}" imgsrc='{{app.globalData.userInfo.avatarurl}}'></inlineAbstract>         
-            <scroll-view class='bless' scroll-y> {{blessData.bless_word.value}}</scroll-view>
+      <inlineAbstract cid='bless sender' imgw="80rpx"  class='send-box'  text="{{blessData.nickName.value}}" imgsrc='{{blessData.avatarUrl.value}}'></inlineAbstract>
+        <inlineAbstract cid='bless geter' imgw="80rpx" class='rece-box' text="{{blessData.receiver.value}}" imgsrc='{{app.globalData.userInfo.avatarurl}}'></inlineAbstract>         
+            <scroll-view class='bless' scroll-y> {{blessData.content.value}}</scroll-view>
   
     </view>  
   </view>

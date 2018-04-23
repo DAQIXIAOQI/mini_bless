@@ -10,13 +10,14 @@
     </scroll-view>
   </view>
 
-  <scroll-view class='content' scroll-y>
+  <scroll-view class='content' scroll-y wx:if='{{!isError}}'>
     <view class='item-box'>
-      <view class='item' hover-class='hover' bindtap='sendText' data-text='{{item.text}}' wx:for='{{nowList.data}}' wx:key='listData' data-fid='{{nowList.id}}' data-tid='{{item.tid}}'>
+      <view class='item' hover-class='hover' bindtap='sendText' data-text='{{item.content}}' wx:for='{{nowList.data}}' wx:key='listData' data-fid='{{nowList.id}}' data-tid='{{item.id}}'>
         <view class='item-text'>
-          {{item.text}}
+          {{item.content}}
         </view>
       </view>
     </view>
   </scroll-view>
+  <view wx:if = '{{isError}}'>暂时无法获取数据，请稍后再试</view>
 </view>

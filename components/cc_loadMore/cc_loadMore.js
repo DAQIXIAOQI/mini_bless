@@ -1,4 +1,4 @@
-// components/cc_loadMore/cc_loadMore.js
+const app =getApp();
 Component({
   properties: {
     url: {
@@ -30,12 +30,11 @@ Component({
     isLoading: false,
     isLoadAll: false,
     /*test data*/
-    index: 0
+    p: 1
   },
 
   methods: {
     loading() {
-      
       if (this.data.isLoadAll) return;
       let that = this;
       this.setData({
@@ -43,9 +42,15 @@ Component({
       });
       //是否为测试环境
       if (!that.data.test) {
+        const $data = Object.assign(app.globalData.ajaxPublic,that.data.data,{p:this.data.p});
+        this.setData({
+          p: that.data.p + 1 ,
+        });
+        console.log($data);
         wx.request({
-          url: that.data.url,
-          data: that.data.data,
+          url: app.globalData.baseServer + that.data.url,
+          data: $data,
+          header: { 'content-type': 'application/x-www-form-urlencoded' },
           method: that.data.method,
           success(e) {
             that.triggerEvent("loadData", { result: e });
@@ -93,6 +98,11 @@ Component({
     loaded() {
       this.setData({
         isLoading: false
+      });
+    },
+    reset(){
+      this.setData({
+        p:1
       });
     }
   }

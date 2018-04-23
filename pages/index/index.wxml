@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
     <tNotice  text="选择祝福卡片分享给群和好友，对方打开后可收到祝福哦~" color="#f0695b" bgcolor="#fededf"></tNotice>
-    <view class='contentBox'>
-      <view class='item' bindtap='toPage' data-id="{{item.id}}" wx:key="indexItem" wx:for="{{listData}}"><imgBox src="{{item.src}}"></imgBox></view> 
+    <view class='contentBox' wx:if='{{listData}}'>
+      <view class='item' bindtap='toPage' data-id="{{item.id}}" wx:key="indexItem" wx:for="{{listData}}"><imgBox src="{{ imgServer + item.imgurl }}"></imgBox></view> 
     </view>
 </view>

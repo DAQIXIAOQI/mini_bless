@@ -69,13 +69,25 @@
 }
 
 .remind .cart-user .cart-main {
-  font-size: 30rpx;
-  margin-bottom: 10rpx;
+  font-size: 35rpx;
+  margin-bottom: 20rpx;
+  padding: 15rpx 0 30rpx ;
+  border-bottom:1px solid rgb(224,224,224);
+}
+.remind .cart-user .cart-main.like .iconfont{
+  color:rgb(248,126,128);
+  letter-spacing: 5rpx;
 }
 .remind .cart-bless {
   background-color: rgb(240,240,244);
   padding:10rpx  20rpx;
+  line-height:50rpx;
   font-size: 30rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
 }
 
 

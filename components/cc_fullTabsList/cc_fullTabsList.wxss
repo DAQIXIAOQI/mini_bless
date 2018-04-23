@@ -67,14 +67,9 @@
 
 .content .item {
   width: 94%;
-  height: 100rpx;
+  max-height: 100rpx;
   border-bottom: 1px solid lightgray;
-  padding: 5rpx 3%;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+  padding: 15rpx 3%;
 }
 .content .item.hover {
   background: #eee;
@@ -85,7 +80,7 @@
 }
 
 .content .item .item-text {
-  height: 80rpx;
+  max-height: 80rpx;
   line-height: 40rpx;
     display: -webkit-box;
   word-break: break-all;

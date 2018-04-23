@@ -2,22 +2,22 @@
     
    <view class='list'>
          <view class='item'>
-         <inputBox cname="你的名字" height="100rpx" name="my_name" setglobal='bless' value="{{userInfo.nickName}}" isrequired='{{true}}' >
+         <inputBox id = 'my_name' cname="你的名字" height="100rpx" name="nickName" setglobal='bless' isrequired='{{true}}' >
          </inputBox></view>
           <view class='item'>
-          <inputBox cname="对方名字" height="100rpx" name="his_name" setglobal='bless' isrequired='{{true}}'>
+          <inputBox cname="对方名字" height="100rpx" name="receiver" setglobal='bless' isrequired='{{true}}'>
          </inputBox></view>
    </view>
    
    <view class='list'>
        <view class='item' hidden='{{!textareaShow}}' >
-          <inputBox   id="bless_word" name="bless_word" single="{{false}}" clear="{{false}}" height="300rpx" setglobal="bless" value="" isrequired='{{true}}' notice="祝福语只能在60字内哦~" placeholder="请填写你的祝福语哦~" maxlength="60" ></inputBox>
+          <inputBox   id="bless_word" name="content" single="{{false}}" clear="{{false}}" height="300rpx" setglobal="bless" value="" isrequired='{{true}}' notice="祝福语只能在60字内哦~" placeholder="请填写你的祝福语哦~" maxlength="60" ></inputBox>
        </view>
    </view>
 
    <view class='select-bless'>
    <view class='box' bindtap='showList'>  
-      选择祝福<icon class='iconfont  icon-jiantouxiaxi'></icon>
+      <text class='left'>选择祝福</text><icon class='iconfont  icon-jiantouxiaxi'></icon>
   </view>
    </view>
 
@@ -29,7 +29,7 @@
       </view>   
    </view>
 
-   <view><btnToAjax cid='editSave' text="保存" url="102313" type="POST" globalval="bless" bind:ajaxback='save'></btnToAjax></view>
+   <view><btnToAjax cid='editSave' text="保存" data="{{sData}}" url="/index.php/api/bless/write_blessings" type="POST" globalval="bless" bind:ajaxback='save'></btnToAjax></view>
    <fulllist class='fixedBox' tabShow="{{false}}" bind:receive='changeBlessWord' bind:close='toggleTextarea' id='blessList'></fulllist>
    <redPacket id="redPacket" bind:close='toggleTextarea' bind:submit='giftSet' class='fixedBox' title='发红包'></redPacket>
    <redPacket id="cartPacket" bind:close='toggleTextarea'  bind:submit='giftSet' class='fixedBox' _type='cartPacket' title='发卡券'></redPacket>

@@ -86,7 +86,7 @@ padding:5% 5%;
 
 
 /* 私有class && 业务class */
-.bless_word .input-notice {
+.content .input-notice {
    margin: 0 auto;
    text-align: center;
    height: 75rpx;
