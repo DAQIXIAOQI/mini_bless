@@ -78,8 +78,8 @@
   color:rgb(248,126,128);
   letter-spacing: 5rpx;
 }
-.remind .cart-bless {
-  background-color: rgb(240,240,244);
+ .cart-bless {
+  background-color: rgb(245,245,245);
   padding:10rpx  20rpx;
   line-height:50rpx;
   font-size: 30rpx;
@@ -90,6 +90,26 @@
   -webkit-line-clamp:2; 
 }
 
+.inline-abstract {
+  display: inline-block;
+  text-align: center;
+  width: 100rpx;
+  margin-right: 30rpx;
+}
+.inline-abstract:first-child {
+  color: #fab9b9;
+}
+.inline-abstract .name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 35rpx;
+}
+.inline-abstract image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 999rpx;
+}
 
 .gray {
   color: rgb(110,110,110);

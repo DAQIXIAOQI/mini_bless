@@ -1,0 +1,15 @@
+<import src='../../template/template.wxml'></import>
+<view class='gray-content'>
+ <view class='main'>
+  <view class='cart-bless'>
+    <text class='gray'>@我的留言：</text>感恩”,是一种生活态度，是一个内心独白 ，是一片肺腑之言，是一份铭心之谢！ 
+  </view>
+  <block wx:for='{{commentList}}' wx:key='comment-list'>
+   <view class='item'>
+    <template is='commentItem' data="{{item}}"></template>
+   </view>
+  </block>
+  </view>
+
+  <loadMore wx:if='{{bdata}}' id = 'loadMore' url = '{{url}}' method='POST' data='{{bdata}}' bind:loadData='getComment'></loadMore>
+</view>

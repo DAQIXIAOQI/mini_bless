@@ -23,6 +23,7 @@ Page({
         isLogin: true,
         userInfo: app.globalData.userInfo
       });
+      that.getCount();
     }  
     wx.setNavigationBarTitle({
       title: "个人中心"
@@ -38,9 +39,11 @@ Page({
       data: app.globalData.ajaxPublic,
       success(res) {
         console.log(res);
+        if (parseInt(res.data.data.notice_count)>0){
         that.setData({
           noticeCount:res.data.data.notice_count,
         });
+        }
       },
       fail(res) {
         console.log(res);
@@ -49,6 +52,7 @@ Page({
   },
   toPage(e){
     let data =e.currentTarget.dataset ;
+    console.log(data);
     wx.navigateTo({
       url: '../receive/receive?column=' + data.column + "&name=" + data.name + "&url=" + data.url
     });

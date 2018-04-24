@@ -1,0 +1,19 @@
+<import src='../../template/template.wxml'></import>
+
+<view class = 'gray-content'>
+  <view class='list'>
+    <view class='list-title'>
+      <text class='icon'><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text></text> 点赞总数35
+    </view>
+    <view class='list-main'>
+      <block wx:for='{{list}}' wx:key='like-list'>
+        
+          <template is='inline-abstract' data='{{item}}'></template>
+      
+      </block>  
+    </view>
+    <view class='cart-bless'>
+           <text class='gray'>@我的祝福</text>   感恩”,是一种生活态度，是一个内心独白  
+    </view>
+  </view>
+</view>

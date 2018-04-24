@@ -20,32 +20,32 @@
       </view>
        <view class='right'>5<text class='iconfont'></text></view>
     </view>
-     <view class=' items'>
+     <view class=' items' data-url = '../like/like' bindtap='toPage'>
       <view class='left'>
         <text class='iconfont icon-dianzan'></text>
       </view>
       <view class='main'>
         <text>祝福点赞</text>
       </view>
-       <view class='right'>5<text class='iconfont icon-fenxiang-tianchong'></text></view>
+       <view class='right'><text class='iconfont icon-jiantou'></text></view>
     </view>
-     <view class=' items'>
+     <view class=' items' data-url = '../comment/comment' bindtap='toPage'>
       <view class='left'>
         <text class='iconfont icon-liuyan1'></text>
       </view>
       <view class='main'>
         <text>祝福留言</text>
       </view>
-         <view class='right'>5<text class='iconfont icon-fenxiang-tianchong'></text></view>
+         <view class='right'><text class='iconfont icon-jiantou'></text></view>
     </view>
-    <view class=' items'>
+    <view class=' items' data-url = '../rank/rank' bindtap='toPage'>
       <view class='left'>
         <text class='iconfont icon-jiangbei '></text>
       </view>
       <view class='main'>
         <text>祝福排名</text>
       </view>
-      <view class='right'>5<text class='iconfont icon-fenxiang-tianchong'></text></view>
+      <view class='right'><text class='iconfont icon-jiantou'></text></view>
     </view>
   </view>
   <view class='btn-box'>

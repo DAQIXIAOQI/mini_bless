@@ -82,5 +82,17 @@ Page({
         // 转发失败
       }
     }
+  },
+  toPage(e){
+    console.log(e.currentTarget.dataset.url.match('rank'));
+    if (e.currentTarget.dataset.url.match('rank')){
+      wx.switchTab({
+        url: e.currentTarget.dataset.url ,
+      });
+      return
+    }
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url + '?id=' + this.data.bid,
+    });
   }
 })

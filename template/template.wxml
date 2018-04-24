@@ -39,7 +39,7 @@
           <view class='cart-main like'  wx:if ='{{item.type == "1"}}'><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text></view>
           <view class='cart-main' wx:if ='{{item.type == "2"}}'> {{item.ncontent}}</view>
           <view class='cart-bless'>
-            <text class='gray'>{{item.type == '2' ? '@我的祝福留言' : '@我的祝福点赞'}}</text>{{item.bcontent}}
+            <text class='gray'>{{item.type == '2' ? '@我的祝福' : '@我的点赞'}}：</text>{{item.bcontent}}
           </view>
         </view>
       </view>
@@ -47,3 +47,9 @@
   </view>
 </template>
 
+<template name='inline-abstract'>
+  <view class='inline-abstract'>
+    <image src = '{{item.src}}'></image>
+    <view class='name'>{{item.name}}</view>
+  </view>
+</template>

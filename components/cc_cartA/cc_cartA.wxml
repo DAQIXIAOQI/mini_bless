@@ -18,7 +18,7 @@
      <view class='title'>{{title}}</view>
   </view>
   <view class='bt-text'>
-    <view class='left-text'>{{lefttext}}</view>
+    <view class='left-text'>{{lefttext}}<text wx:if='{{mark == "myBlessings"}}' class='iconfont icon-dianzan'></text></view>
     <view class='right-text'>{{righttext}}</view>
   </view>
 </view>

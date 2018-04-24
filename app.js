@@ -5,7 +5,12 @@ App({
   globalData: {
     userInfo: false,
     baseServer: "http://dev.mini.zsylife.cn",
-    imgServer: "http://dev.mini.zsylife.cn/data/upload/"
+    imgServer: "http://dev.mini.zsylife.cn/data/upload/",
+    api:{
+      myBlessings : "/index.php/api/bless/my_blessings",
+      viewBlessings: "/index.php/api/bless/view_blessings",
+      blessComment: "/index.php/api/bless/blessings_comment_list",
+    }
   },
   /*登录*/
   login(succ,fail) {

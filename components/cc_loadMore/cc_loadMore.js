@@ -32,7 +32,9 @@ Component({
     /*test data*/
     p: 1
   },
-
+  ready(){
+    this.loading = this.loading.bind(this);
+  },
   methods: {
     loading() {
       if (this.data.isLoadAll) return;
@@ -42,7 +44,13 @@ Component({
       });
       //是否为测试环境
       if (!that.data.test) {
-        const $data = Object.assign(app.globalData.ajaxPublic,that.data.data,{p:this.data.p});
+        let $data ;
+        if(that.data.data){
+          $data = Object.assign(app.globalData.ajaxPublic,that.data.data,{p:this.data.p});
+        }
+        else{ 
+          $data = Object.assign(app.globalData.ajaxPublic, { p: this.data.p });
+        }
         this.setData({
           p: that.data.p + 1 ,
         });

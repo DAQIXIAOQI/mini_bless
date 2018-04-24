@@ -1,9 +1,9 @@
 <view class='container gray-content'>
   <view class="for-box">
  <view class="cart-box {{column}}" wx:for='{{listData}}' wx:key="receivelist"> 
- <cartA cid="{{options.url=='cart' ? 'cart cartb':'cart'}}" title="{{options.url=='cart' ? '标题名称':''}}" width="{{column == 'column3' ?'30.3vw':'44vw'}}" imgh="{{options.url=='cart' ? '1.5':'1'}}" imgsrc="{{item.imgsrc}}" lefttext="{{item.name}}" righttext="{{item.time}}"></cartA>
+ <cartA cid="{{options.url=='cart' ? 'cart cartb':'cart'}}" title="{{options.url=='cart' ? '标题名称':''}}" width="{{column == 'column3' ?'30.3vw':'44vw'}}" imgh="{{options.url=='cart' ? '1.5':'1'}}" imgsrc="{{imgServer + item.imgurl}}" righttext="{{item.createtime}}" lefttext="{{item.bepraised?item.bepraised : item.nickname}}" mark='{{options.url}}'></cartA>
  </view>
  </view>
- <loadMore id="loadMore" test='{{true}}' maxl='15' num='6' bind:loadData="loadData"></loadMore>
+ <loadMore wx:if = '{{url}}' id="loadMore" url='{{url}}' bind:loadData="loadData"></loadMore>
 
  </view>

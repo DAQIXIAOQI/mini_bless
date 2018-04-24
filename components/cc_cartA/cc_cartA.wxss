@@ -1,3 +1,4 @@
+@import '../../font/iconfont.wxss';
 .container {
   width: 100%;
  
@@ -47,9 +48,7 @@
   font-size: 35rpx;
 }
 .cart .bt-text .left-text,.cart .bt-text .right-text {
-  display: inline-block;
   font-size: 30rpx;
-  max-width: 50%;
   height: 60rpx;
   line-height: 60rpx;
   overflow: hidden;
@@ -58,11 +57,18 @@
   color:#f67f7f;
   overflow: hidden;
   float: left;
+  width: 40%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.cart .bt-text .left-text .iconfont {
+  margin-left: 10rpx;
+  font-size: 35rpx;
 }
 .cart .bt-text .right-text{
   color:#929292;
-  max-width: 40%;
-  margin-left: 10%;
+  margin-left: 40%;
+  width: 60%;
 }
 
 .cart.cartb  .bt-text .left-text  {

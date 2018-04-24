@@ -1,0 +1,14 @@
+@import "../../template/template.wxss" ;
+
+.gray-content {
+  min-height: 96vh;
+  padding: 2vh 0 ;
+}
+.main {
+  padding: 2vh 0;
+  background-color: white;
+  border-bottom:1px solid #e0e0e0;
+}
+.cart-bless {
+  border-bottom:1px solid #e0e0e0;
+}

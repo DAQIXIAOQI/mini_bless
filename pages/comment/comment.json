@@ -1,0 +1,5 @@
+{
+  "usingComponents":{
+    "loadMore":"/components/cc_loadMore/cc_loadMore"
+  }
+}
