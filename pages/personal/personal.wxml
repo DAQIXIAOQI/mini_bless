@@ -15,12 +15,16 @@
    </view>
      
   <view class='user-notice list'>
-      <view class='item remind' bindtap='toRemind' data-name="我收到的赞和评论" data-url="remind" ><text class=' left iconfont icon-tixing'></text> <text class='main'>提醒</text> <text class='right' wx:if='{{noticeCount}}'>{{noticeCount}}</text></view>
+      <view class='item remind' bindtap='toOther' data-page='../remind/remind' data-name="我收到的赞和评论" data-url="remind" ><text class=' left iconfont icon-tixing'></text> <text class='main'>提醒</text> <text class='right' wx:if='{{noticeCount}}'>{{noticeCount}}</text></view>
 
   </view>
   <view class='user-bless list'>
   <view class='item' bindtap='toPage' data-name="收到的祝福" data-url="viewBlessings" data-column="2"><text class='left iconfont icon-iconset0173-copy'></text> <text class='main'>收到的祝福</text> <text class='iconfont icon-jiantou right '></text></view>
     <view class='item' bindtap='toPage' data-name="送出的祝福" data-url="myBlessings" data-column="2"><text class=' left iconfont icon-iconset0173'></text> <text class='main'>送出的祝福</text> <text class='iconfont icon-jiantou right '></text></view>
+  </view>
+
+  <view class='user-reward list'>
+  <view class='item' bindtap='toOther' data-page = '../reward/reward' data-name="我的奖品"><text class='left iconfont icon-iconset0173-copy'></text> <text class='main'>我的奖品</text> <text class='iconfont icon-jiantou right '></text></view>
   </view>
 
   <!-- <view class='user-reward list'>

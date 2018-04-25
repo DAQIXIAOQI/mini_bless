@@ -3,10 +3,10 @@
 <view class = 'gray-content'>
   <view class='list'>
     <view class='list-title'>
-      <text class='icon'><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text></text> 点赞总数35
+      <text class='icon'><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text><text class='iconfont icon-dianzan'></text></text> 点赞总数{{likeNum}}
     </view>
     <view class='list-main'>
-      <block wx:for='{{list}}' wx:key='like-list'>
+      <block wx:for='{{likeList}}' wx:key='like-list'>
         
           <template is='inline-abstract' data='{{item}}'></template>
       

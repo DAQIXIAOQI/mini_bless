@@ -57,9 +57,9 @@ Page({
       url: '../receive/receive?column=' + data.column + "&name=" + data.name + "&url=" + data.url
     });
   },
-  toRemind(e) {
+  toOther(e) {
     wx.navigateTo({
-      url: '../remind/remind'
+      url: e.currentTarget.dataset.page
     });
   }
 })

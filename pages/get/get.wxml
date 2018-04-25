@@ -51,7 +51,7 @@
     </view>
     <view class='comment-list-box' hidden='{{!isShowComment}}'>
       <text class='comment-back' bindtap="toggleComment">返回</text>
-      <view class='comment-title'>留言345</view>
+      <view class='comment-title'>留言({{commentNum}})</view>
       <view class='comment-item' wx:for='{{commentList}}' wx:key='comment-list'>
         <template is="commentItem" data="{{item}}">
         </template>

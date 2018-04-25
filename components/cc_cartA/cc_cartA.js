@@ -39,6 +39,9 @@ Component({
     title:{
       type:String,
       value:''
+    },
+    mid:{
+      type:String
     }
   },
   data: {
@@ -59,7 +62,7 @@ Component({
   },
   methods: {
     tap() {
-      this.triggerEvent('callback', { 'mark': this.data.mark });
+      this.triggerEvent('callback', { 'mark': this.data.mark,'mid':this.data.mid });
     }
   }
 })

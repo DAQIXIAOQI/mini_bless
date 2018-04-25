@@ -23,7 +23,7 @@ Page({
   getComment(e){
     console.log(e);
     let arr = this.data.commentList;
-    let data = e.detail.result.data.data;
+    let data = e.detail.result.data.data.list;
     if (data.length == 0) {
       this.commentLoad.loadAll();
     }

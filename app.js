@@ -4,12 +4,14 @@ App({
   },
   globalData: {
     userInfo: false,
-    baseServer: "http://dev.mini.zsylife.cn",
-    imgServer: "http://dev.mini.zsylife.cn/data/upload/",
+    baseServer: "https://mini.zsylife.cn",
+    imgServer: "https://mini.zsylife.cn/data/upload/",
     api:{
       myBlessings : "/index.php/api/bless/my_blessings",
       viewBlessings: "/index.php/api/bless/view_blessings",
       blessComment: "/index.php/api/bless/blessings_comment_list",
+      blessLike:"/index.php/api/bless/blessings_bepraised_list",
+      blessDetail: "/index.php/api/bless/blessings_detail"
     }
   },
   /*登录*/

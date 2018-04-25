@@ -1,0 +1,26 @@
+<view class='gray-content'>
+  <view class='tabs'>
+    <block wx:for='{{tabs}}' wx:key='reward-tabs'>
+      <view class='tabs-item {{index == current ? "fc-red" : ""}}' data-index='{{index}}' bindtap='toggle'>{{item}}</view>
+    </block>
+    <view class='tabs-line' style='width:{{tabsWidth+"vw"}};left:{{current*tabsWidth + "vw"}}'></view>
+  </view>
+
+  <view class='main-list'>
+    <block wx:for='{{rewardList[current]}}' wx:key='reward-list' wx:if='{{rewardList[current].length != 0 }}'>
+     <view class='item'>
+      <image src='{{bg[current]}}'></image>
+      <view class='item-size fc-red'>{{item.size}}<text class='fs-medium'>M</text>
+      </view>
+      <view class='text fs-small'>
+        <text class='item-deadline fc-black'>有限期至{{item.deadline}}</text>
+        <text class='item-card'>{{item.size}}M流量券</text>
+        <text class='item-get fc-red'>{{item.time}}获取的流量券</text>
+      </view>
+    </view>
+    </block> 
+    <view class='item no-reward' wx:if='{{rewardList[current].length == 0 }}'>
+      你暂无{{tabs[current]}}的奖品~
+    </view>
+  </view>
+</view>

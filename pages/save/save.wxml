@@ -1,6 +1,6 @@
 <view class='container gray-content'>
   <view class='slide-box box'>
-    <slide id='slide' imgurl='{{imgUrls}}'></slide>
+    <slide wx:if = '{{imgUrls}}' id='slide' imgurl='{{imgUrls}}'></slide>
   </view>
   <view class='bless-box box'>
     <view  class='main'style='background-image:url(http://dev.guotu.zsylife.cn/minidata/editBox.png)'>
@@ -50,7 +50,7 @@
   </view>
   <view class='btn-box'>
         <view class='edit-box'>
-           <view class='btn1' bindtap='toEdit'><text class='iconfont icon-arrow-left'></text>返回</view>
+           <view class='btn1' bindtap='toEdit'><text class='iconfont icon-arrow-left'></text>编辑</view>
            <view class='btn1'  bindtap='toIndex'><text class='iconfont icon-arrow-left'></text>新建</view>
     
         </view>

@@ -72,14 +72,14 @@ Page({
   },
   loadComment(e) {
     let arr = this.data.commentList;
-    let data = e.detail.result.data.data;
+    let data = e.detail.result.data.data.list;
     if (data.length == 0) {
       this.commentLoad.loadAll();
     }
     arr = arr.concat(data);
-    arr = arr.reverse();
     this.setData({
-      commentList: arr
+      commentList: arr,
+      commentNum: e.detail.result.data.data.count
     });
   },
   toggleComment() {

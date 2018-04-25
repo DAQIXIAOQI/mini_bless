@@ -2,11 +2,11 @@
 
 .gray-content {
   min-height: 98vh;
-  padding: 20rpx 0 ;
+  padding: 1vh 0 ;
 }
 
 .remind-item {
   width: 100vw;
-  margin-bottom: 20rpx;
+  margin-bottom: 1vh;
   border-bottom: 1px solid rgb(224,224,224);
 }

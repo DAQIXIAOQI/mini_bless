@@ -55,7 +55,15 @@ Component({
 
   },
   ready(){  
+       if(this.data.value != ""){
        this.input(this.data.value);
+       }
+       else{
+         console.log(app.globalData[this.data.setglobal]);
+         if (!app.globalData[this.data.setglobal] || !app.globalData[this.data.setglobal][this.data.name]){
+           this.input("");
+         }
+       }
   }
   ,
   methods: {

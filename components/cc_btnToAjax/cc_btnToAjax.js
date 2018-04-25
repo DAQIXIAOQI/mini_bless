@@ -42,6 +42,7 @@ Component({
      
       let that = this ;
       if(this.checkNull()){
+        console.log(this.data.data);
         wx.request({
           url: app.globalData.baseServer + this.data.url,
           method:this.data.type,

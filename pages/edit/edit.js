@@ -2,12 +2,26 @@ const app = getApp()
 Page({
   data: {
     textareaShow: true
-
   },
   onLoad: function (options) {
-    this.setData({      
-        sid: options.id
-    });
+    switch(options.resource){
+      case "save":
+        this.setData({
+          bid: options.bid,
+          type:'save',
+          bless: app.globalData.bless,
+          sid: app.globalData.bless.sid.value
+        });
+        break;
+      case "index":
+        this.setData({
+          sid: options.sid,
+          type:'index'
+        });
+        break;
+      default:
+        break  
+    }
   },
   onReady: function () {
     wx.setNavigationBarTitle({
@@ -18,6 +32,7 @@ Page({
       backgroundColor: '#f0695b'
     });
     this.myName = this.selectComponent('#my_name');
+    this.hisName = this.selectComponent('#his_name');
     this.blessList = this.selectComponent("#blessList");
     this.blessWord = this.selectComponent("#bless_word");
     this.redPacket = this.selectComponent("#redPacket");
@@ -29,11 +44,7 @@ Page({
           "uid": app.globalData.userInfo.id,
           "3rd_session": app.globalData.userInfo['3rd_session']
         }
-      }, () => {
-        this.myName.input(this.data.userInfo.nickname);
-        app.globalData.bless['avatarUrl'] = { name: 'avatarUrl', 'value': this.data.userInfo.avatarurl };
-        app.globalData.bless['sid'] = { name: 'sid', 'value': this.data.sid };
-      });
+      }, this.dataInit);
     }
     else {
       wx.showModal({
@@ -41,7 +52,25 @@ Page({
         content: '你未登录',
       });
     }
+    if(this.data.type == 'save'){
 
+    }
+  },
+  dataInit(){
+    if(this.data.type == 'save'){
+      this.myName.input(this.data.bless.nickName.value);
+      this.hisName.input(this.data.bless.receiver.value);
+      this.blessWord.input(this.data.bless.content.value);
+      app.globalData.bless.bid = {
+        name: 'bid',
+        value: this.data.bid
+      };
+    }
+    else{
+      this.myName.input(this.data.userInfo.nickname);
+      app.globalData.bless['avatarUrl'] = { name: 'avatarUrl', 'value': this.data.userInfo.avatarurl };
+      app.globalData.bless['sid'] = { name: 'sid', 'value': this.data.sid };
+    }
   },
   showList: function () {
     this.toggleTextarea();
@@ -78,7 +107,7 @@ Page({
     let that = this;
     if(e.detail.result.statusCode == 200){
       wx.navigateTo({
-          url: '../save/save?id=' + that.data.sid  + '&resource=edit&bid=' + e.detail.result.data.data.bid ,
+          url: '../save/save?sid=' + that.data.sid  + '&resource=edit&bid=' + e.detail.result.data.data.bid ,
       });
     }
     else{

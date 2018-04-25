@@ -14,3 +14,15 @@
    text-align: center;
    border-radius: 99rpx;
 }
+.fs-small {
+  font-size: 25rpx;
+}
+.fs-medium {
+  font-size: 30rpx;
+}
+.fc-black {
+  color: #383838;
+}
+.fc-red {
+  color:#f67f7f;
+}

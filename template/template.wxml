@@ -2,8 +2,8 @@
 
   <view class='rankItem items'>
     <view class='left'>
-      <imgBox wx:if="{{item.rank < 3}}" src='http://dev.guotu.zsylife.cn/minidata/ward{{item.rank+1}}.png'></imgBox>
-      <text wx:if="{{item.rank>=3}}">{{item.rank+1}}</text>
+      <imgBox wx:if= "{{item.rank <= 3}}" src='http://dev.guotu.zsylife.cn/minidata/ward{{item.rank}}.png'></imgBox>
+      <text wx:if= "{{item.rank > 3}}" >{{item.rank+1}}</text>
     </view>
     <view class='main'>
       <view class='img-box'>
@@ -18,9 +18,9 @@
 <template name='commentItem'>
   <view class='cartItem'>
     <view class='cart-user'>
-      <image src='{{item.avatar}}'></image>
+      <image src='{{item.avatarurl}}'></image>
       <view class='cart-info'>
-        <text class='cart-user-name'>{{item.wid}}</text>
+        <text class='cart-user-name'>{{item.nickname}}</text>
         <text class='cart-user-time'>{{item.createtime}}</text>
         <view class='cart-main'> {{item.content}}</view>
       </view>
@@ -49,7 +49,7 @@
 
 <template name='inline-abstract'>
   <view class='inline-abstract'>
-    <image src = '{{item.src}}'></image>
-    <view class='name'>{{item.name}}</view>
+    <image src = '{{item.avatarurl}}'></image>
+    <view class='name'>{{item.nickname}}</view>
   </view>
 </template>

@@ -42,5 +42,17 @@ Page({
     this.setData({
       listData:arr
     });
+  },
+  toPage(e){
+    if(this.options.url == 'myBlessings'){
+    wx.navigateTo({
+      url: '../save/save?bid=' + e.detail.mid + '&resource=receive',
+    })
+    }
+    else{
+    wx.navigateTo({
+      url: '../get/get?bid=' + e.detail.mid + '&resource=receive',
+    })
+    }
   }
 })

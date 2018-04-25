@@ -23,7 +23,7 @@ Page({
   },
   toPage(e) {
     wx.navigateTo({
-      url: '../edit/edit?id=' + e.currentTarget.dataset.id + '&resource=index',
+      url: '../edit/edit?sid=' + e.currentTarget.dataset.id + '&resource=index',
     })
   },
   setList() {

@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -30,18 +30,18 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "11",
-					"pathName": "pages/get/get",
+					"pathName": "pages/personal/personal",
 					"query": "bid=27"
 				},
 				{
 					"id": 1,
 					"name": "like",
-					"pathName": "pages/comment/comment",
+					"pathName": "pages/like/like",
 					"query": "id=27"
 				}
 			]

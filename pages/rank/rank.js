@@ -44,9 +44,13 @@ Page({
       dataType: 'json',
       data: app.globalData.ajaxPublic,
       success(res) {
-        console.log(res);
+        let list = res.data.data.ranks;
+        for (let i = 0; i < list.length ; i++){
+          list[i].rank = i + 1 ;
+        }
+        console.log(list);
         that.setData({
-          listData: res.data.data.ranks,
+          listData: list,
           my_rank: res.data.data.my_rank || 'no get',
         });
         

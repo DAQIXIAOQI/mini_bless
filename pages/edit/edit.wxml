@@ -5,7 +5,7 @@
          <inputBox id = 'my_name' cname="你的名字" height="100rpx" name="nickName" setglobal='bless' isrequired='{{true}}' >
          </inputBox></view>
           <view class='item'>
-          <inputBox cname="对方名字" height="100rpx" name="receiver" setglobal='bless' isrequired='{{true}}'>
+          <inputBox id = 'his_name' cname="对方名字" height="100rpx" name="receiver" setglobal='bless' isrequired='{{true}}'>
          </inputBox></view>
    </view>
    
