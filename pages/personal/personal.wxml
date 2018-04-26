@@ -1,9 +1,9 @@
 <view class="content gray-content">
    <view class='user-info' style="background-image:url({{topBg}})">
-       <view class='avatar'><imgBox src='{{userInfo.avatarurl}}'></imgBox></view>
+       <view class='avatar'><imgBox src='{{userInfo.avatarUrl || userInfo.avatarurl}}'></imgBox></view>
       
        <view class='info' wx-if="{{isLogin}}">
-          <view class='info-name'>{{userInfo.nickname}}</view>
+          <view class='info-name'>{{userInfo.nickName || userInfo.nickname}}</view>
           <view class='info-id'>ID : {{userInfo.id}}</view>
            <view class='info-like'><text>收到赞 1</text> <text>送出赞 x</text></view>
        </view>
@@ -15,7 +15,7 @@
    </view>
      
   <view class='user-notice list'>
-      <view class='item remind' bindtap='toOther' data-page='../remind/remind' data-name="我收到的赞和评论" data-url="remind" ><text class=' left iconfont icon-tixing'></text> <text class='main'>提醒</text> <text class='right' wx:if='{{noticeCount}}'>{{noticeCount}}</text></view>
+      <view class='item remind' bindtap='toOther' data-page='../remind/remind' data-name="我收到的赞和评论" data-url="remind" ><text class=' left iconfont icon-tixing'></text> <text class='main'>提醒</text> <text class='right' wx:if='{{noticeCount > 0}}'>{{noticeCount}}</text></view>
 
   </view>
   <view class='user-bless list'>

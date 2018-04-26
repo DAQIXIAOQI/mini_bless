@@ -8,9 +8,9 @@
 
   <view class='main-list'>
     <block wx:for='{{rewardList[current]}}' wx:key='reward-list' wx:if='{{rewardList[current].length != 0 }}'>
-     <view class='item'>
+     <view class='item' bindtap='get'>
       <image src='{{bg[current]}}'></image>
-      <view class='item-size fc-red'>{{item.size}}<text class='fs-medium'>M</text>
+      <view class='item-size fc-red fs-large'>{{item.size}}<text class='fs-medium'>M</text>
       </view>
       <view class='text fs-small'>
         <text class='item-deadline fc-black'>有限期至{{item.deadline}}</text>
@@ -24,3 +24,4 @@
     </view>
   </view>
 </view>
+<exchange id = 'exchange' ></exchange>

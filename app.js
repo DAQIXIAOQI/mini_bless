@@ -74,12 +74,12 @@ App({
           success: function (res) { 
             var $data = {
               "code": code,
-              "nickname": res.userInfo.nickName,
+              "nickName": res.userInfo.nickName,
               'gender': res.userInfo.gender,
               'city': res.userInfo.city,
               'province': res.userInfo.province,
               'country': res.userInfo.country,
-              'avatarurl': res.userInfo.avatarUrl,
+              'avatarUrl': res.userInfo.avatarUrl,
               'language':res.userInfo.language
             }
             that.globalData.userInfo = $data;

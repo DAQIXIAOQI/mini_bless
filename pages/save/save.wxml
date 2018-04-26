@@ -18,7 +18,7 @@
       <view class='main'>
         <text>祝福浏览</text>
       </view>
-       <view class='right'>5<text class='iconfont'></text></view>
+       <view class='right'>{{view||0}}<text class='iconfont'></text></view>
     </view>
      <view class=' items' data-url = '../like/like' bindtap='toPage'>
       <view class='left'>

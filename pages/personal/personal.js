@@ -15,7 +15,7 @@ Page({
           isLogin:true,
           userInfo: app.globalData.userInfo
         });
-        that.getCount();
+        //that.getCount();
       })
     }
     else{
@@ -23,11 +23,15 @@ Page({
         isLogin: true,
         userInfo: app.globalData.userInfo
       });
-      that.getCount();
+      //that.getCount();
     }  
     wx.setNavigationBarTitle({
       title: "个人中心"
     });
+  },
+  onShow(){
+    console.log('getCount');
+    this.getCount();
   },
   getCount(){
     const that = this;
@@ -38,12 +42,10 @@ Page({
       dataType: 'json',
       data: app.globalData.ajaxPublic,
       success(res) {
-        console.log(res);
-        if (parseInt(res.data.data.notice_count)>0){
+        console.log(res);      
         that.setData({
-          noticeCount:res.data.data.notice_count,
+          noticeCount:parseInt(res.data.data.notice_count),
         });
-        }
       },
       fail(res) {
         console.log(res);

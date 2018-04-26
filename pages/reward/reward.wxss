@@ -47,6 +47,10 @@
 .main-list .item .item-size {
   padding: 10vw 0 0 23vw;
   float: left;
+  font-size: 40rpx;
+}
+.main-list .item .item-size text {
+  font-size: 37rpx;
 }
 .main-list .item .text {
   margin:0 5% 0 43%;
@@ -57,7 +61,7 @@
   position: relative;
 }
 .main-list .item .text text.item-deadline {
-  margin-top:4.5vw; 
+  margin-top:5vw; 
   font-size:28rpx;
 }
 .main-list .item .text text.item-card {
@@ -67,5 +71,6 @@
   position: absolute;
   top: 2.5vw;
   right: 6vw;
+  font-size: 23rpx;
 }
 

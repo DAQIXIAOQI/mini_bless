@@ -33,6 +33,7 @@ Page({
   },
   onReady: function () {
     this.tabsInit();
+    this.exchange = this.selectComponent("#exchange");
   },
   toggle(e){
     this.setData({
@@ -44,5 +45,9 @@ Page({
     this.setData({
       tabsWidth: width
     });
+  },
+  get(){
+    if(this.data.current != 0) return ;
+    this.exchange.toggle();
   }
 })

@@ -34,6 +34,11 @@ Page({
         that.setData({
           bless: res.data.data
         });
+        if(res.data.data.is_praise == 1){
+          that.setData({
+            isLike: true
+          });
+        }
         that.getSlide(res.data.data.sid);
       },
       fail(res) {
@@ -106,12 +111,12 @@ Page({
     }, 2500);
   },
   toggleLike() {
+    if (this.data.isLike || this.data.isliking ) return;
     this.setData({
       isliking: true,
     });
-    if (this.data.isLike || this.data.isliking ) return;
     const that = this;
-    const $data = Object.assign(app.globalData.ajaxPublic, { bid: this.data.bid, wid: this.data.bless.uid });
+    const $data = Object.assign(app.globalData.ajaxPublic, { wid: this.data.bless.uid } ,this.data.bdata);
     wx.request({
       url: app.globalData.baseServer + '/index.php/api/bless/blessings_praise',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
@@ -119,9 +124,24 @@ Page({
       data: $data,
       dataType: 'json',
       success(res) {
+        if(res.data.status){
         that.setData({
-          isLike: true
+          isLike: true,
+          isliking: false
         });
+        }
+        else{
+          wx.showModal({
+            title: '出错了',
+            content: '请重新点赞',
+            showCancel: false
+          });
+          that.setData({
+            isLike: false,
+            isliking: false
+          });
+
+        }
       },
       fail(res) {
         console.log(res);

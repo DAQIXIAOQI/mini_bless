@@ -1,6 +1,7 @@
 /* pages/receive/receive.wxss */
 .container {
-  padding-bottom: 100rpx;
+  padding-bottom: 5vh;
+  min-height: 95vh;
 }
 .cart-box {
   background-color: white;
@@ -19,6 +20,12 @@ border-width:0px 0 1px 0;
   width: 44vw;
   padding:5vw 1.5vw 2vw 4.5vw;
   }
+.column2.column2:last-child {
+  padding-right: 52vw;
+}
+.column2:nth-child(2n).column2:last-child {
+  padding-right: 4.5vw;
+}      
 .column2:nth-child(2n){
     padding:5vw 4.5vw 2vw 1.5vw;
 }

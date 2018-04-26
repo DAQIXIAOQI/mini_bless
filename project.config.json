@@ -30,19 +30,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": 0,
 					"name": "11",
-					"pathName": "pages/personal/personal",
-					"query": "bid=27"
+					"pathName": "pages/get/get",
+					"query": "bid=91"
 				},
 				{
 					"id": 1,
 					"name": "like",
-					"pathName": "pages/like/like",
-					"query": "id=27"
+					"pathName": "pages/reward/reward",
+					"query": "bid=84"
 				}
 			]
 		}

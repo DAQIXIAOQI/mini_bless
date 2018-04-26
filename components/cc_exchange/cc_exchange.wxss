@@ -1,0 +1,95 @@
+@import  "/font/iconfont.wxss" ;
+
+.pop-box {
+  visibility: hidden;
+}
+
+.pop-box.show {
+  visibility: visible;
+}
+
+.mask {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 22;
+  top: 0;
+  left: 0;
+  background-color: rgba(10, 10, 10, 0.5);
+  display: none;
+}
+
+.main-box {
+  position: fixed;
+  width: 72vw;
+  height: 35vw;
+  padding: 40rpx;
+  z-index: 22;
+  left: 50%;
+  top: 30%;
+  background-color: #fff;
+  opacity: 0;
+  transform: translate3d(-50%, -50%, 0);
+  border: 1px solid #dadada;
+  transition:all 0.5s linear;
+}
+.main-box .lt-logo {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 17%;
+  height: 45%;
+}
+.main-box .main-title {
+  margin: 0 15%;
+  border-left: 8rpx solid #f67f7f;
+  height: 35rpx;
+  line-height: 35rpx;
+  font-size: 35rpx;
+  padding-left: 20rpx;
+}
+.main-box .main-notice {
+  font-size: 30rpx;
+  color:#909090;
+  margin: 4vw 15%;
+  min-height: 15vw;
+}
+.main-box .input-box {
+   margin: 6vw 15%;
+   border: 1px solid #dadada;
+   background-color: #f8f8f8;
+   padding: 15rpx 20rpx;
+   border-radius: 10rpx;
+}
+.main-box .close {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  color: #909090;
+  font-size: 30rpx;
+}
+.main-box .close text {
+  float: left;
+  margin: 0 10rpx;
+}
+.main-box .submit-button {
+  background: #f67f7f;
+  border-radius: 99rpx;
+  margin:  0 18%;
+  color:white;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+}
+.main-box .main-notice .iconfont {
+  color: #dec056;
+  padding: 0 10rpx;
+}
+
+.show .mask {
+  display: block;
+}
+
+.show .main-box {
+  opacity: 1;
+}

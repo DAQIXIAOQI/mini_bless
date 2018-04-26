@@ -13,7 +13,15 @@ module.exports = Behavior({
     },
     close() {
       this.triggerEvent('close');
-      this.toggle();
+      this.setData({
+        isShow: false
+      });
+      if(this.reset){
+        this.reset();
+      }
+    },
+    stopScroll(e) {
+      return
     }
   }
 })
