@@ -17,17 +17,14 @@
 .main-box {
   position: fixed;
   width: 75vw;
-  height: 70vh;
-  padding: 20rpx;
+  height: 78vh;
   z-index: 22;
   left: 50%;
   top: 50%;
-  background-color:rgb(228,27,41);
   border-radius: 10rpx;
   opacity: 0;
   transition: all 0.4s ease;
   transform: translate3d(-50%, -50%, 0);
-  box-shadow:0 0 25rpx rgb(239,190,74);
 }
 .show .mask {
   display: block;
@@ -35,18 +32,9 @@
 .show .main-box {
   opacity: 1;
 }
-.main-title {
-  width: 100%;
-  color:rgb(239,190,74);
-  font-size: 35rpx;
-  text-align: center;
-}
-.main-title view {
-  font-size: 50rpx;
-}
 .main-card {
-  height: 50%;
-  margin: 50rpx 25%;
+  height: 55%;
+  margin: 30rpx 17%;
 }
 .main-card.move-out {
   animation: 1000ms out linear;
@@ -55,29 +43,51 @@
   animation: 1000ms in linear;
 }
 .main-card .card {
-  width: 100%;
-  height: 100%;
-  background-color: rgb(35,145,78);
-  border-radius: 8rpx;
-  box-shadow:0 0 25rpx #ffffff;
+  width: 80%;
+  height: 45%;
+  color:#f67f7f;
+  background-color: #fff6d6;
+  box-shadow:0 0 20rpx #ffffff;
   display: none;
+  padding: 40% 10%;
+  text-align: center;
+}
+.main-card .card .btn {
+  color:white;
+  background-color: #f67f7f;
+  height: 65rpx;
+  margin: 50rpx 20rpx 0 20rpx;
+  line-height: 65rpx;
+  border-radius: 99rpx;
 }
 .main-card .card.card-iw {
-  background-color: rgb(255,255,255);
+  background-color: rgb(253,221,122);
 }
 .main-card .card.show {
   display: block;
 }
+.adv-box {
+  width: 100%;
+  height: 35%;
+}
+.main-box image {
+  width:100%;
+  height: 100%;
+}
+.title-box {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 30%;
+}
+.bg-box {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+  height: 75%;
+}
 
-.main-btn {
-  text-align: center;
-}
-.main-btn button{
-  background-color: rgb(251,184,191);
-  width: 70%;
-  display: inline-block;
-  color:#ffffff;
-}
 @keyframes out {
   0% {
         transform: rotateY(0deg) scale(1,1);
@@ -98,17 +108,3 @@
       opacity: 1;
   }
 }
- /* @keyframes rotate1 {
-  0% {
-        transform: rotateY(0deg) scale(1,1);
-          opacity: 1;
-  }
-  50% {
-     transform: rotateY(180deg) scale(0.5,0.5); 
-   opacity:0; 
-  }
-  100% {
-     transform: rotateY(360deg) scale(1,1); 
-      opacity: 1;
-  }
-}  */

@@ -35,8 +35,8 @@
 				{
 					"id": 0,
 					"name": "11",
-					"pathName": "pages/get/get",
-					"query": "bid=91"
+					"pathName": "pages/save/save",
+					"query": "bid=91&resource=receive"
 				},
 				{
 					"id": 1,

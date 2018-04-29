@@ -2,18 +2,27 @@
   <view bindtouchstart='close' class='mask '>
   </view>
   <view class='main-box ' catchtouchmove='stopScroll'>
-    <view class='main-title'>
-      <view>
-        恭喜您
-      </view>
-      获得了一次抽奖机会~！请点击下面卡片进行抽奖。
-    </view>
+    <view class='adv-box'><image src='../../images/adv.png'></image></view>
+    <view class='bg-box'><image src='../../images/lucky-bg.png'></image></view>
+    <view class='title-box'><image src='../../images/lucky-title.png'></image></view>
     <view class='main-card {{moveOut ?"move-out":""}} {{moveIn ?"move-in":""}}' bindtap='watch'>
-      <view class='card-nw card {{isWatch?"":"show"}}'></view>
-      <view class='card-iw card {{isWatch?"show":""}}'>暂未中奖,祝你身体健康</view>
-    </view>
-    <view class='main-btn'>
-      <button class='furl'>收下</button>
+      <view class='card-nw card {{isWatch?"":"show"}}'>
+        <view class='card-text'>
+          <view>恭喜您<text class=''></text></view>
+          <view>获得1次抽奖机会</view>
+        </view>
+        <view class='btn'>抽奖</view>
+      </view>
+      <view class='card-iw card {{isWatch?"show":""}}'>
+        <view class='card-text' wx:if='{{isWin}}'>
+          <view>恭喜您<text class=''></text></view>
+          <view>获得1次抽奖机会</view>
+        </view>
+         <view class='card-text' wx:if='{{!isWin}}'>
+          <view>很遗憾</view>
+          <view>你未中奖，祝你生活愉快！</view>
+        </view>
+      </view>
     </view>
   </view>
 </view>

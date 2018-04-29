@@ -7,7 +7,8 @@ Component({
   data: {
     isWatch: false,
     moveOut: false,
-    moveIn:false
+    moveIn:false,
+    isWin:false
   },
   methods: {
     watch(){
