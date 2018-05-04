@@ -8,14 +8,14 @@
 
   <view class='main-list'>
     <block wx:for='{{rewardList[current]}}' wx:key='reward-list' wx:if='{{rewardList[current].length != 0 }}'>
-     <view class='item' bindtap='get'>
+     <view class='item' data-fid = '{{item.id}}' data-spec='{{item.spec}}' bindtap='get'>
       <image src='{{bg[current]}}'></image>
-      <view class='item-size fc-red fs-large'>{{item.size}}<text class='fs-medium'>M</text>
+      <view class='item-size fc-red fs-large'>{{item.spec}}<text class='fs-medium'>M</text>
       </view>
       <view class='text fs-small'>
-        <text class='item-deadline fc-black'>有限期至{{item.deadline}}</text>
-        <text class='item-card'>{{item.size}}M流量券</text>
-        <text class='item-get fc-red'>{{item.time}}获取的流量券</text>
+        <text class='item-deadline fc-black'>有限期至{{item.endtime}}</text>
+        <text class='item-card'>{{item.spec}}M流量券</text>
+        <text class='item-get fc-red'>{{item.createtime}}获取的流量券</text>
       </view>
     </view>
     </block> 

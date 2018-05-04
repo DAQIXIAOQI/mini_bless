@@ -54,6 +54,7 @@ Page({
       url: app.globalData.baseServer + '/index.php/api/bless/bless_style_detail',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: $data,
+      method: 'POST',
       dataType: 'json',
       success(res) {
         console.log(res);

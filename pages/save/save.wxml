@@ -58,5 +58,5 @@
           <button open-type='share' class='btn'><text class='iconfont icon-send'></text>发送</button>
         </view>     
   </view>
-  <luckyDraw id = 'luckyDraw'  bind:close='close'></luckyDraw>
+  <luckyDraw wx:if='{{bid}}' id = 'luckyDraw' bid='{{bid}}'  bind:close='close'></luckyDraw>
 </view>

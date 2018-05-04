@@ -9,4 +9,5 @@
   width: 100vw;
   margin-bottom: 1vh;
   border-bottom: 1px solid rgb(224,224,224);
+  text-align: center;
 }

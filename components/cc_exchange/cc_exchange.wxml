@@ -3,9 +3,9 @@
   </view>
   <view class='main-box ' catchtouchmove='stopScroll'>
      <image src = '../../images/lt-logo.png' class='lt-logo' />
-     <view class='main-title'>1024M流量券</view>
-     <view wx:if='{{status == "got"}}' class='main-notice got'>你的流量已成功兑换到1xxx2xxx2xx号码<text class='iconfont icon-buoumaotubiao49'></text></view>  
-     <view wx:if='{{status == "fail"}}' class='main-notice fail'>你的流量未兑换成功，请稍后再试<text class='iconfont icon-kulian-line'></text></view>  
+     <view class='main-title'>{{spec}}M流量券</view>
+     <view wx:if='{{status == "got"}}' class='main-notice got'>你的流量已成功兑换到{{phone}}号码<text class='iconfont icon-buoumaotubiao49'></text></view>  
+     <view wx:if='{{status == "fail"}}' class='main-notice fail'>系统繁忙，你的流量未兑换成功，请稍后再试<text class='iconfont icon-kulian-line'></text></view>  
      <form bindsubmit='submit' wx:if='{{status == "wait"}}'>
      <view  class='input-box'> <input value='{{value}}' name='phone' type='number' placeholder='请输入手机号码' /></view> 
      <button class='submit-button' form-type='submit'>确认领取</button>

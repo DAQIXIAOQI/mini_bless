@@ -11,7 +11,11 @@ App({
       viewBlessings: "/index.php/api/bless/view_blessings",
       blessComment: "/index.php/api/bless/blessings_comment_list",
       blessLike:"/index.php/api/bless/blessings_bepraised_list",
-      blessDetail: "/index.php/api/bless/blessings_detail"
+      blessDetail: "/index.php/api/bless/blessings_detail",
+      fluxCoupons:"/index.php/api/bless/flux_coupons",
+      fluxRecharge:"/index.php/api/bless/flux_recharge",
+      fluxActive:"/index.php/api/bless/flux_active",
+      verifyActive: "/index.php/api/bless/verify_active"
     }
   },
   /*登录*/
@@ -127,18 +131,19 @@ App({
     });
   },
   check(){
-    console.log("nocheck");
-    return
+    console.log("a");
+    // console.log("nocheck");
+    // return
     const that = this;
     console.log(that.globalData);
     wx.request({
-      url: that.globalData.baseServer + "/index.php/api/bless/blessings_comment_list",
+      url: that.globalData.baseServer + "/index.php/api/bless/flux_active",
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: {
         'uid': that.globalData.userInfo['id'],
         '3rd_session': that.globalData.userInfo['3rd_session'],
-        'bid':'28'
+        'bid':'98'
         //'p': '1',
         //'wid': '2',
 

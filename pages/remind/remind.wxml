@@ -8,6 +8,9 @@
         <template is = 'remindItem' data = '{{item}}'></template>
       </view> 
     </block>
+     <view class='remind-item cartItem fc-red' wx:if='{{remindList.length == 0}}'>
+        暂无提醒哦。赶紧去分享祝福给朋友吧！
+      </view> 
   </view>
 
 </view>

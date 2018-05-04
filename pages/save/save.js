@@ -42,6 +42,7 @@ Page({
       url: app.globalData.baseServer + app.globalData.api.blessDetail,
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: $data,
+      method:'POST',
       dataType: 'json',
       success(res) {
         if(res.data.status){
@@ -99,6 +100,7 @@ Page({
       url: app.globalData.baseServer + '/index.php/api/bless/bless_style_detail',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: $data,
+      method: 'POST',
       dataType: 'json',
       success(res) {
         console.log(res);
@@ -145,17 +147,13 @@ Page({
     return {
       title: '我给你写了一段祝福',
       path: '/pages/get/get?bid=' + this.data.bid,
+      withShareTicket: true,
       success: function (res) {
-        //  wx.showModal({
-        //    title: '恭喜',
-        //    content: '分享成功,',
-        //    showCancel:false
-        //  })
+        console.log(res);
         that.setData({
           luckyDraw: true
         }, function () {
-          const luckyDraw = that.selectComponent("#luckyDraw");
-          luckyDraw.toggle();
+          that.luckyDraw();
         });
 
       },
@@ -174,6 +172,26 @@ Page({
     }
     wx.navigateTo({
       url: e.currentTarget.dataset.url + '?id=' + this.data.bid,
+    });
+  },
+  luckyDraw(){
+    const $data = Object.assign(app.globalData.ajaxPublic, { bid:this.data.bid});
+    const that = this;
+    wx.request({
+      url: app.globalData.baseServer + app.globalData.api.verifyActive,
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: $data,
+      method: 'POST',
+      dataType: 'json',
+      success(res) {
+        if(res.data.status){
+          const luckyDraw = that.selectComponent("#luckyDraw");
+          luckyDraw.toggle();
+        }  
+      },
+      fail(res) {
+        console.log(res);
+      }
     });
   }
 })

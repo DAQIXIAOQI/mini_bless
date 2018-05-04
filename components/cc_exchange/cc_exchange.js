@@ -1,4 +1,5 @@
 import fullfix from '../behavior/fixedToggle.js';
+const app = getApp();
 Component({
   behaviors: [fullfix],
   properties: {
@@ -31,9 +32,35 @@ Component({
         }
         else{
           //接request
-          this.setData({
-            status:'got'
-          });
+          const $data = Object.assign(app.globalData.ajaxPublic, { fid: this.data.fid,mobile:val });
+          const that = this;
+          wx.request({
+            url: app.globalData.baseServer + app.globalData.api.fluxRecharge,
+            header: { 'content-type': 'application/x-www-form-urlencoded' },
+            data: $data,
+            method: 'POST',
+            dataType: 'json',
+            success(res) {
+             if(res.data.status){
+             that.setData({
+               status: 'got',
+               phone:val
+             });
+             }
+             else{
+               that.setData({
+                 status: 'fail'
+               });
+             }
+            },
+            fail(res) {
+              console.log(res);
+              that.setData({
+                status: 'fail'
+              });
+            }
+          })
+         
         }
       }
     },
@@ -47,6 +74,9 @@ Component({
       this.setData({
         status: 'wait'
       });
+    },
+    setValue(obj){
+      this.setData(obj);
     }
   }
 });

@@ -16,7 +16,7 @@
       <view class='card-iw card {{isWatch?"show":""}}'>
         <view class='card-text' wx:if='{{isWin}}'>
           <view>恭喜您<text class=''></text></view>
-          <view>获得1次抽奖机会</view>
+          <view>获得{{spec}}M流量,请到个人中心-我的奖品内兑换</view>
         </view>
          <view class='card-text' wx:if='{{!isWin}}'>
           <view>很遗憾</view>
