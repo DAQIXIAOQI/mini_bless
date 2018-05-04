@@ -68,5 +68,11 @@ Page({
     const reg = /(\d{4})-(\d{2})-(\d{2})/;
     val = val.match(reg);
     return (val[1]+'年'+val[2]+'月'+val[3]+'日')
+  },
+  clear(e){
+    this.setData({
+      rewardList:[[],[],[]]
+    },this.getData);
+    
   }
 })

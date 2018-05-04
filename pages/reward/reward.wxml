@@ -24,4 +24,4 @@
     </view>
   </view>
 </view>
-<exchange id = 'exchange' ></exchange>
+<exchange id = 'exchange' bind:success = 'clear' ></exchange>

@@ -45,6 +45,8 @@ Component({
              that.setData({
                status: 'got',
                phone:val
+             },function(){
+               that.triggerEvent("success");
              });
              }
              else{
