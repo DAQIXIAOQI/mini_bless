@@ -6,8 +6,8 @@
 }
 
 .btn {
-   background-color: #f67f7f;
    color: white;
+   background-color: #f67f7f;
    display: inline-block;
    height: 60rpx;
    line-height: 60rpx;
