@@ -23,7 +23,23 @@ Page({
         break  
     }
   },
+<<<<<<< HEAD
+  onShow(){
+    console.log(this.data.type, app.globalData.bless);
+    if(this.data.type == 'index' && app.globalData.bless){
+      this.setData({
+        type: 'save',
+        bless: app.globalData.bless,
+        sid: app.globalData.bless.sid.value
+      });
+    }
+  }
+  ,
   onReady: function () {
+    console.log('ready');
+=======
+  onReady: function () {
+>>>>>>> d696ebc9395bd738d95a73be074bcae8ec7229e5
     wx.setNavigationBarTitle({
       title: "编辑祝福内容"
     });
