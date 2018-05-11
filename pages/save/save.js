@@ -28,13 +28,10 @@ Page({
   onReady: function () {
     this.slide = this.selectComponent("#slide");
     if(this.data.type == 'edit') {
-<<<<<<< HEAD
       app.globalData.bless.bid = {
         value: this.data.bid,
         name:'bid'
       };
-=======
->>>>>>> d696ebc9395bd738d95a73be074bcae8ec7229e5
       this.slideInit();
     }
     else{

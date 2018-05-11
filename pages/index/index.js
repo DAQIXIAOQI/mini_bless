@@ -1,8 +1,4 @@
 const app = getApp()
-<<<<<<< HEAD
-=======
-
->>>>>>> d696ebc9395bd738d95a73be074bcae8ec7229e5
 Page({
   data: {},
   onLoad: function () {
@@ -25,10 +21,7 @@ Page({
     
   },
   toPage(e) {
-<<<<<<< HEAD
     this.clearBless();
-=======
->>>>>>> d696ebc9395bd738d95a73be074bcae8ec7229e5
     wx.navigateTo({
       url: '../edit/edit?sid=' + e.currentTarget.dataset.id + '&resource=index',
     })
@@ -110,13 +103,10 @@ Page({
     //     })
     //   }
     // })
-<<<<<<< HEAD
   },
   clearBless() {
     if (app.globalData.bless) {
       app.globalData.bless = null ;
     }
-=======
->>>>>>> d696ebc9395bd738d95a73be074bcae8ec7229e5
   }
 })
